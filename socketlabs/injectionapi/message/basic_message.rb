@@ -8,7 +8,8 @@ module SocketLabs
 
         attr_accessor :to_email_address,
                       :cc_email_address,
-                      :bcc_email_address,:subject,
+                      :bcc_email_address,
+                      :subject,
                       :plain_text_body,
                       :html_body,
                       :api_template,

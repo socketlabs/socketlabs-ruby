@@ -5,9 +5,8 @@ module SocketLabs
 
         class MessageResultDto
 
-          attr_accessor :index,
-                        :error_code,
-                        :address_results
+          attr_accessor :index
+          attr_accessor :error_code
 
           def initialize
             @index = nil
@@ -15,10 +14,32 @@ module SocketLabs
             @address_results = Array.new
           end
 
+            
+          # Get the List of AddressResult objects
+          # @return [Array]
+          def address_results 
+            @address_results
+          end
+          
+          # Set the List of AddressResult objects
+          # @param [Array] value
+          def address_results=(value) 
+            @address_results = Array.new
+                        
+            if value.nil? || value.empty
+                value.each do |v1|                  
+                  if v1.instance_of? MergeFieldJson
+                    @address_results.push(v1)
+                  end
+                end                       
+
+          end
+
+
           def to_json
             json = {
-                ErrorCode: @error_code,
-                Index: @index
+                :ErrorCode => @error_code,
+                :Index => @index
             }
             if @address_results.length > 0
               e = Array.new
@@ -30,6 +51,7 @@ module SocketLabs
 
         end
 
+        end
       end
     end
   end
