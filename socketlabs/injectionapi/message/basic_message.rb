@@ -3,63 +3,89 @@ require "../socketlabs/injectionapi/message/helpers/to_email_address"
 module SocketLabs
   module InjectionApi
     module Message
-      class BasicMessage
-        include SocketLabs::InjectionApi::Message::Helpers
+      class BasicMessage < MessageBase
 
-        attr_accessor :to_email_address,
-                      :cc_email_address,
-                      :bcc_email_address,
-                      :subject,
-                      :plain_text_body,
-                      :html_body,
-                      :api_template,
-                      :mailing_id,
-                      :message_id,
-                      :charset,
-                      :from_email_address,
-                      :reply_to_email_address,
-                      :attachments,
-                      :custom_headers
-
-        def initialize
-          @subject = nil
-          @plain_text_body = nil
-          @html_body = nil
-          @api_template = nil
-          @mailing_id = nil
-          @message_id = nil
-          @charset = nil
-          @from_email_address = nil
-          @reply_to_email_address = nil
-          @attachments = Array.new
-          @custom_headers = Array.new
+        # Get the To EmailAddress list
+        def to_email_address
+          @to_email_address
+        end
+        # Set the To EmailAddress list
+        def to_email_address=(value)
           @to_email_address = Array.new
-          @cc_email_address = Array.new
-          @bcc_email_address = Array.new
+          unless value.nil? || value.empty?
+            value.each do |v1|
+              if v1.instance_of? EmailAddress
+                @to_email_address.push(v1)
+              else
+                raise StandardError("Invalid type for to_email_address, type of 'EmailAddress' was expected")
+              end
+            end
+          end
         end
-
+        # Add an EmailAddress to the To recipient list.
+        # @param [String] email_address
+        # @param [String] friendly_name
         def add_to_email_address(email_address, friendly_name = nil)
-          if email_address.is_a? Array
-            @to_email_address.push(*ToEmailAddress.new.convert_array(email_address))
-
-          else
-            @to_email_address << ToEmailAddress.new.convert(email_address, friendly_name)
+          if email_address.instance_of? EmailAddress
+            @to_email_address.push(email_address)
+          elsif email_address.instance_of? String
+            @to_email_address.push(EmailAddress.new(email_address, friendly_name))
           end
         end
 
+        # Get the CC EmailAddress list
+        def cc_email_address
+          @cc_email_address
+        end
+        # Set the CC EmailAddress list
+        def cc_email_address=(value)
+          @cc_email_address = Array.new
+          unless value.nil? || value.empty?
+            value.each do |v1|
+              if v1.instance_of? EmailAddress
+                @cc_email_address.push(v1)
+              else
+                raise StandardError("Invalid type for cc_email_address, type of 'EmailAddress' was expected")
+              end
+            end
+          end
+        end
+        # Add an EmailAddress to the CC recipient list.
+        # @param [String] email_address
+        # @param [String] friendly_name
         def add_cc_email_address(email_address, friendly_name = nil)
-          if email_address.is_a? Array
-            @cc_email_address.push(*ToEmailAddress.new.convert_array(email_address))
-          else
-            @cc_email_address << ToEmailAddress.new.convert(email_address, friendly_name)
+          if email_address.instance_of? EmailAddress
+            @cc_email_address.push(email_address)
+          elsif email_address.instance_of? String
+            @cc_email_address.push(EmailAddress.new(email_address, friendly_name))
           end
         end
 
+        # Get the CC EmailAddress list
+        def bcc_email_address
+          @bcc_email_address
+        end
+        # Set the CC EmailAddress list
+        def bcc_email_address=(value)
+          @bcc_email_address = Array.new
+          unless value.nil? || value.empty?
+            value.each do |v1|
+              if v1.instance_of? EmailAddress
+                @bcc_email_address.push(v1)
+              else
+                raise StandardError("Invalid type for bcc_email_address, type of 'EmailAddress' was expected")
+              end
+            end
+          end
+        end
+        # Add an EmailAddress to the CC recipient list.
+        # @param [String] email_address
+        # @param [String] friendly_name
         def add_bcc_email_address(email_address, friendly_name = nil)
-          if email_address.is_a? Array
-            @bcc_email_address.push(*ToEmailAddress.new.convert_array(email_address))
-          else
-            @bcc_email_address << ToEmailAddress.new.convert(email_address, friendly_name)
+          if email_address.instance_of? EmailAddress
+            @bcc_email_address.push(email_address)
+          elsif email_address.instance_of? String
+            @bcc_email_address.push(EmailAddress.new(email_address, friendly_name))
           end
         end
 
@@ -71,6 +97,7 @@ module SocketLabs
           "Recipients: #{c}, Subject: '#{@subject}'"
 
         end
+
         def to_json
           {
             subject: @subject,

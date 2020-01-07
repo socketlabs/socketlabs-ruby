@@ -1,4 +1,3 @@
-require "../../core/string_extension"
 module SocketLabs
   module InjectionApi
     module Core
@@ -24,7 +23,7 @@ module SocketLabs
           attr_accessor :from_email
           # the optional reply to email address.
           attr_accessor :reply_to
-          # the the list of MergeDataJson
+          # the the MergeDataJson for the message
           attr_accessor :merge_data
 
 
@@ -55,9 +54,9 @@ module SocketLabs
           end
           # Set the list of AttachmentJson.
           # @param [Array] value
-          def attachments(value)
+          def attachments=(value)
             @attachments = Array.new
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
               value.each do |v1|
                 if v1.instance_of? AttachmentJson
                   @attachments.push(v1)
@@ -70,7 +69,7 @@ module SocketLabs
           # @param [AttachmentJson] value
           def add_attachments(value)
             if value.instance_of? AttachmentJson
-              @attachments.push(v1)
+              @attachments.push(value)
             end
           end
 
@@ -82,9 +81,9 @@ module SocketLabs
           end
           # Set the list of CustomHeaderJson.
           # @param [Array] value
-          def custom_headers(value)
+          def custom_headers=(value)
             @custom_headers = Array.new
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
               value.each do |v1|
                 if v1.instance_of? CustomHeaderJson
                   @custom_headers.push(v1)
@@ -97,7 +96,7 @@ module SocketLabs
           # @param [CustomHeaderJson] value
           def add_custom_header(value)
             if value.instance_of? CustomHeaderJson
-              @custom_headers.push(v1)
+              @custom_headers.push(value)
             end
           end
 
@@ -108,9 +107,9 @@ module SocketLabs
           end
           # Set the To email address list
           # @param [Array] value
-          def to_email_address(value)
+          def to_email_address=(value)
             @to_email_address = Array.new
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
               value.each do |v1|
                 if v1.instance_of? AddressJson
                   @to_email_address.push(v1)
@@ -126,9 +125,9 @@ module SocketLabs
           end
           # Set the CC email address list
           # @param [Array] value
-          def cc_email_address(value)
+          def cc_email_address=(value)
             @cc_email_address = Array.new
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
               value.each do |v1|
                 if v1.instance_of? AddressJson
                   @cc_email_address.push(v1)
@@ -144,9 +143,9 @@ module SocketLabs
           end
           # Set the BCC email address list
           # @param [Array] value
-          def bcc_email_address(value)
+          def bcc_email_address=(value)
             @bcc_email_address = Array.new
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
               value.each do |v1|
                 if v1.instance_of? AddressJson
                   @bcc_email_address.push(v1)
@@ -154,6 +153,85 @@ module SocketLabs
               end
             end
           end
+
+          # build json hash for MessageJson
+          # @return [hash]
+          def to_json
+
+            json = {
+                :from => @from_email.to_json
+            }
+
+            if StringExtension.is_nil_or_white_space(@subject)
+              json[:subject] = @subject
+            end
+
+            if StringExtension.is_nil_or_white_space(@html_body)
+              json[:htmlBody] = @html_body
+            end
+
+            if StringExtension.is_nil_or_white_space(@plain_text_body)
+              json[:textBody] = @plain_text_body
+            end
+
+            if StringExtension.is_nil_or_white_space(@api_template)
+              json[:apiTemplate] = @api_template
+            end
+
+            if StringExtension.is_nil_or_white_space(@mailing_id)
+              json[:mailingId] = @mailing_id
+            end
+
+            if StringExtension.is_nil_or_white_space(@message_id)
+              json[:messageId] = @message_id
+            end
+
+            if StringExtension.is_nil_or_white_space(@reply_to)
+              json[:replyTo] = @reply_to
+            end
+
+            if StringExtension.is_nil_or_white_space(@charset)
+              json[:charSet] = @charset
+            end
+
+            if @to_email_address.length > 0
+              e = Array.new
+              @to_email_address.each{ |x| e >> x.to_json}
+              json[:to] = e
+            end
+
+            if @cc_email_address.length > 0
+              e = Array.new
+              @cc_email_address.each{ |x| e >> x.to_json}
+              json[:cc] = e
+            end
+
+            if @bcc_email_address.length > 0
+              e = Array.new
+              @bcc_email_address.each{ |x| e >> x.to_json}
+              json[:bcc] = e
+            end
+
+            if @custom_headers.length > 0
+              e = Array.new
+              @custom_headers.each{ |x| e >> x.to_json}
+              json[:customHeaders] = e
+            end
+
+            if @attachments.length > 0
+              e = Array.new
+              @attachments.each{ |x| e >> x.to_json}
+              json[:attachments] = e
+            end
+
+            if @merge_data.nil?
+              json[:mergeData] = @merge_data.to_json
+            end
+
+            json
+
+          end
+
         end
       end
     end
