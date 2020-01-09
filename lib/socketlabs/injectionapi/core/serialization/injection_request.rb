@@ -15,9 +15,9 @@ module SocketLabs
           attr_accessor :messages
 
           # Initializes a new instance of the InjectionRequest class
-          # @param [String] name
-          # @param [String] value
-          # @param [String] value
+          # @param [String] api_key
+          # @param [String] server_id
+          # @param [String] messages
           def initialize(
             api_key = nil, 
             server_id = nil, 
@@ -33,8 +33,8 @@ module SocketLabs
           def to_json
 
             json = {
-                :serverId => @server_id,
-                :apiKey => @api_key
+              :serverId => @server_id,
+              :apiKey => @api_key
             }
 
             if @messages.length > 0

@@ -1,9 +1,18 @@
-require "../socketlabs/injectionapi/message/helpers/to_email_address"
+require "message_base.rb"
+require "email_address.rb"
 
 module SocketLabs
   module InjectionApi
     module Message
       class BasicMessage < MessageBase
+        include SocketLabs::InjectionApi
+        include SocketLabs::InjectionApi::Message
+
+        def initialize
+          @to_email_address = Array.new
+          @cc_email_address = Array.new
+          @bcc_email_address = Array.new
+        end
 
         # Get the To EmailAddress list
         def to_email_address

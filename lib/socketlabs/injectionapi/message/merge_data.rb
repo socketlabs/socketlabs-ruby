@@ -11,33 +11,19 @@ module SocketLabs
       class MergeData
 
         # the MergeData key
-        attr_reader :key
+        attr_accessor :key
         # the value of the custom header
-        attr_reader :value
+        attr_accessor :value
 
         # Initializes a new instance of the CustomHeader class
         # @param [String] key
         # @param [String] value
         def initialize(
-            key,
-            value
+            key = nil,
+            value = nil
         )
-          unless StringExtension.is_nil_or_white_space(key)
-            if key.kind_of?(String)
-              @key = key
-            else
-              raise StandardError("Invalid key for MergeData, type of 'string' was expected")
-            end
-          end
-
-          unless StringExtension.is_nil_or_white_space(value)
-            if value.kind_of?(String)
-              @value = value
-            else
-              raise StandardError("Invalid value for MergeData, type of 'string' was expected")
-            end
-          end
-
+          @key = key
+          @value = value
         end
 
         # A quick check to ensure that the MergeData is valid.

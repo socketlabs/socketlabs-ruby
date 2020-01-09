@@ -36,9 +36,9 @@ module SocketLabs
           def to_json
             json =
             {
-                :name=> @name,
-                :content=> @value,
-                :contentType=> @mime_type
+              :name=> @name,
+              :content=> @value,
+              :contentType=> @mime_type
             }
             if StringExtension.is_nil_or_white_space(@content_id)
               json[:contentId] = @content_id

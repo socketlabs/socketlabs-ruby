@@ -1,18 +1,19 @@
 
 module SocketLabs
   module InjectionApi
-    module Message
-      
-      send_result = {
+
+    class SendResult
+      # Send Result hash
+      @@enum = {
 
         # An error has occurred that was unforeseen
         :UnknownError =>
-          {        
+          {
             :name => "UnknownError",
             :value =>0,
             :message =>"An error has occurred that was unforeseen"
           },
-            
+
         # A timeout occurred sending the message
         :Timeout =>
           {
@@ -268,7 +269,7 @@ module SocketLabs
             :value =>32,
             :message =>"SDK Validation Error: Message does not contain a subject"
           },
-            
+
         # SDK Validation Error: Message does not contain a message body
         :MessageValidationEmptyMessage =>
           {
@@ -276,7 +277,7 @@ module SocketLabs
             :value =>33,
             :message =>"SDK Validation Error: Message does not contain a message body"
           },
-                        
+
         # SDK Validation Error: Message contains invalid custom headers
         :MessageValidationInvalidCustomHeaders =>
           {
@@ -284,8 +285,8 @@ module SocketLabs
             :value =>34,
             :message =>"SDK Validation Error: Message contains invalid custom headers"
           },
-            
-        # SDK Validation Error: Message contains invalid ReplyTo address        
+
+        # SDK Validation Error: Message contains invalid ReplyTo address
         :RecipientValidationInvalidReplyTo =>
           {
             :name =>"RecipientValidationInvalidReplyTo",
@@ -295,23 +296,24 @@ module SocketLabs
 
         # SDK Validation Error: Message contains invalid recipients
         :RecipientValidationInvalidRecipients =>
-          {        
+          {
             :name =>"RecipientValidationInvalidRecipients",
             :value =>36,
             :message =>"SDK Validation Error: Message contains invalid recipients"
           },
-            
-        # SDK Validation Error: Expected messageType of basic or bulk             
+
+        # SDK Validation Error: Expected messageType of basic or bulk
         :MessageValidationInvalidMessageType =>
-          {        
+          {
             :name =>"MessageValidationInvalidMessageType",
             :value =>37,
             :message =>"SDK Validation Error: Expected messageType of basic or bulk"
-        
+
           }
 
       }
 
     end
+
   end
 end

@@ -1,7 +1,5 @@
 module SocketLabs
   module InjectionApi
-    class SocketLabsClient
-
-    end
+    VERSION = '1.0.0'
   end
 end

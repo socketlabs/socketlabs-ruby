@@ -28,12 +28,12 @@ module SocketLabs
           def to_json
             if StringExtension.is_nil_or_white_space(@friendly_name)
               {
-                  :emailAddress  => @email_address
+                :emailAddress  => @email_address
               }
             else
               {
-                  :emailAddress => @email_address,
-                  :friendlyName => @friendly_name
+                :emailAddress => @email_address,
+                :friendlyName => @friendly_name
               }
             end
           end

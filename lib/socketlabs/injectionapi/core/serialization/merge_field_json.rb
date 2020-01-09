@@ -3,32 +3,32 @@ module SocketLabs
     module Core
       module Serialization
 
-        # Represents a custom header as a name and value pair.
+        # Represents a merge field as a field and value pair.
         # To be serialized into JSON string before sending to the Injection Api.
-        class CustomHeaderJson
+        class MergeFieldJson
 
-          # name of the custom header.
-          attr_accessor :name
-          # value of the custom header.
+          # The field of your merge field.
+          attr_accessor :field
+          # The merge field value.
           attr_accessor :value
 
-          # Initializes a new instance of the CustomHeaderJson class
-          # @param [String] name
+          # Initializes a new instance of the MergeFieldJson class
+          # @param [String] field
           # @param [String] value
           def initialize(
-            name = nil,
+            field = nil,
             value = nil
           )
-            @name = name
+            @field = field
             @value = value
           end
 
-          # build json hash for CustomHeaderJson
+          # build json hash for MergeFieldJson
           # @return [hash]
           def to_json
             {
-                :name => @name,
-                :value => @value
+              :field => @field,
+              :value => @value
             }
           end
 

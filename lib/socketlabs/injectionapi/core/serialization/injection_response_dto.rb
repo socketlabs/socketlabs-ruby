@@ -35,8 +35,8 @@ module SocketLabs
           def to_json
 
             json = {
-                :errorCode => @server_id,
-                :transactionReceipt => @api_key
+              :errorCode => @server_id,
+              :transactionReceipt => @api_key
             }
 
             if @message_results.length > 0
