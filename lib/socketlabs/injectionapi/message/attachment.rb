@@ -1,5 +1,5 @@
 require 'base64'
-require "../../core/string_extension"
+require_relative '../core/string_extension.rb'
 
 module SocketLabs
   module InjectionApi
@@ -31,38 +31,31 @@ module SocketLabs
         attr_accessor :content_id
 
         # Initializes a new instance of the CustomHeader class
-        # @param [String] name
-        # @param [String] content
-        def initialize(
-            name = nil,
-            content = nil,
-            mime_type = nil,
-            custom_headers = nil,
-            file_path = nil,
-            content_id = nil
-        )
+        # @param [merge] arguments - accepted arguments file_path, name, mime_type, content_id, custom_headers, content
 
-          unless StringExtension.is_nil_or_white_space(file_path)
-            readfile(file_path)
+        def initialize(arguments)
+
+          unless arguments[:file_path].nil? || arguments[:file_path].empty?
+            readfile(arguments[:file_path])
           end
 
-          unless StringExtension.is_nil_or_white_space(name)
-            @name = name
+          unless arguments[:name].nil? || arguments[:name].empty?
+            @name = arguments[:name]
           end
 
-          unless StringExtension.is_nil_or_white_space(mime_type)
-            @mime_type = mime_type
+          unless arguments[:mime_type].nil? || arguments[:mime_type].empty?
+            @mime_type = arguments[:mime_type]
           end
 
-          @content_id = content_id
+          @content_id = arguments[:content_id]
 
           @custom_headers = []
-          unless custom_headers.nil? || merge_data.empty?
-            @custom_headers = custom_headers
+          unless arguments[:custom_headers].nil? || arguments[:custom_headers].empty?
+            @custom_headers = arguments[:custom_headers]
           end
 
-          unless StringExtension.is_nil_or_white_space(content)
-            @content = content
+          unless arguments[:content].nil? || arguments[:content].empty?
+            @content = arguments[:content]
           end
 
         end
@@ -85,43 +78,43 @@ module SocketLabs
         # @param [String] extension
         # @return [String] mime type
         def get_mime_type_from_ext(extension)
+          extension[0]=''
+          types = [
+            { :ext => "txt", :mime_type => "text/plain" },
+            { :ext => "ini", :mime_type => "text/plain" },
+            { :ext => "sln", :mime_type => "text/plain" },
+            { :ext => "cs", :mime_type => "text/plain" },
+            { :ext => "js", :mime_type => "text/plain" },
+            { :ext => "config", :mime_type => "text/plain" },
+            { :ext => "vb", :mime_type => "text/plain" },
+            { :ext => :"jpg", :mime_type => "image/jpeg" },
+            { :ext => "jpeg", :mime_type => "image/jpeg" },
+            { :ext => "bmp", :mime_type => "image/bmp" },
+            { :ext => "csv", :mime_type => "text/csv" },
+            { :ext => "doc", :mime_type => "application/msword" },
+            { :ext => "docx", :mime_type => "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
+            { :ext => "gif", :mime_type => "image/gif" },
+            { :ext => "html", :mime_type => "text/html" },
+            { :ext => "pdf", :mime_type => "application/pdf" },
+            { :ext => "png", :mime_type => "image/png" },
+            { :ext => "ppt", :mime_type => "application/vnd.ms-powerpoint" },
+            { :ext => "pptx", :mime_type => "application/vnd.openxmlformats-officedocument.presentationml.presentation" },
+            { :ext => "xls", :mime_type => "application/vnd.ms-excel" },
+            { :ext => "xlsx", :mime_type => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
+            { :ext => "xml", :mime_type => "application/xml" },
+            { :ext => "zip", :mime_type => "application/x-zip-compressed" },
+            { :ext => "wav", :mime_type => "audio/wav" },
+            { :ext => "eml", :mime_type => "message/rfc822" },
+            { :ext => "mp3", :mime_type => "audio/mpeg" },
+            { :ext => "mp4", :mime_type => "video/mp4" },
+            { :ext => "mov", :mime_type => "video/quicktime" }
+          ]
+          mime = types.find {|x| x[:ext] == extension}
 
-           types = {
-            :txt => "text/plain",
-            :ini=>"text/plain",
-            :sln=>"text/plain",
-            :cs=>"text/plain",
-            :js=>"text/plain",
-            :config=>"text/plain",
-            :vb=>"text/plain",
-            :jpg=>"image/jpeg",
-            :jpeg=>"image/jpeg",
-            :bmp=>"image/bmp",
-            :csv=>"text/csv",
-            :doc=>"application/msword",
-            :docx=>"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-            :gif=>"image/gif",
-            :html=>"text/html",
-            :pdf=>"application/pdf",
-            :png=>"image/png",
-            :ppt=>"application/vnd.ms-powerpoint",
-            :pptx=>"application/vnd.openxmlformats-officedocument.presentationml.presentation",
-            :xls=>"application/vnd.ms-excel",
-            :xlsx=>"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            :xml=>"application/xml",
-            :zip=>"application/x-zip-compressed",
-            :wav=>"audio/wav",
-            :eml=>"message/rfc822",
-            :mp3=>"audio/mpeg",
-            :mp4=>"video/mp4",
-            :mov=>"video/quicktime"
-           }
-          mime = types[extension]
-
-            if StringExtension.is_nil_or_white_space(mime)
+            unless mime.nil? || mime.empty?
             "application/octet-stream"
             end
-            mime
+            mime[:mime_type]
         end
 
         # Add a CustomHeader to the attachment

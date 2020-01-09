@@ -1,4 +1,4 @@
-require "../../core/string_extension"
+require_relative 'string_extension.rb'
 
 module SocketLabs
   module InjectionApi

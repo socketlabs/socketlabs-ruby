@@ -1,4 +1,4 @@
-require "../../core/string_extension"
+require_relative '../core/string_extension.rb'
 
 module SocketLabs
   module InjectionApi
@@ -29,13 +29,13 @@ module SocketLabs
         # Determines if the EmailAddress is valid. Does simple syntax validation on the email address.
         # @return [Boolean]
         def is_valid
-          StringExtension.is_valid_email_address(@email_address)
+          StringExtension.new.is_valid_email_address(@email_address)
         end
 
         # Represents the EmailAddress as a string
         # @return [String]
         def to_s
-          if StringExtension.is_nil_or_white_space(@friendly_name)
+          if @friendly_name.nil? || @friendly_name.empty?
             @email_address
           else
             "#{@friendly_name} <#{@email_address}>"

@@ -1,3 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'mime-types'
+gemspec
+
+gem 'ruby_http_client'

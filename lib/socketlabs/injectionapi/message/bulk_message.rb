@@ -1,7 +1,7 @@
 module SocketLabs
   module InjectionApi
     module Message
-      class BulkMessage < MessageBase
+      class BulkMessage # < MessageBase
 
         attr_accessor :global_merge_data
 

@@ -1,3 +1,6 @@
+require 'ruby_http_client'
+require_relative '../version.rb'
+
 module SocketLabs
   module InjectionApi
     class SocketLabsClient

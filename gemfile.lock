@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    socketlabs-ruby (1.0.0)
+      ruby_http_client (~> 3.3.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ruby_http_client (3.3.0)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  ruby_http_client
+  socketlabs-ruby!
+
+BUNDLED WITH
+   2.1.4

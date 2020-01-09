@@ -9,7 +9,7 @@ module SocketLabs
         end
 
         def self.is_valid_email_address(email_address)
-          if is_nil_or_white_space(email_address)
+          if email_address.nil? || email_address.empty?
             false
           end
           if email_address.length
