@@ -35,6 +35,8 @@ module SocketLabs
 
         def initialize(arguments)
 
+          @custom_headers = Array.new
+
           unless arguments[:file_path].nil? || arguments[:file_path].empty?
             readfile(arguments[:file_path])
           end
@@ -68,7 +70,7 @@ module SocketLabs
           @name = File.basename(file_path)
           @mime_type = get_mime_type_from_ext(File.extname(file_path))
 
-          file = File.open("file_path", "rb")
+          file = File.open(file_path, "rb")
           encoded_string = Base64.encode64(file.read)
           @content = encoded_string
 
@@ -118,10 +120,17 @@ module SocketLabs
         end
 
         # Add a CustomHeader to the attachment
-        # @param [String] name
+        # @param [String/CustomHeader] name
         # @param [String] value
         def add_custom_header(name, value)
-          @custom_headers.push(CustomHeader.new(name, value))
+
+          if name.kind_of? CustomHeader
+            @custom_headers.push(name)
+
+          elsif name.kind_of? String
+            @custom_headers.push(CustomHeader.new(name, value))
+
+          end
         end
 
         # Represents the Attachment as a String

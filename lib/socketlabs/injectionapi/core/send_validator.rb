@@ -1,4 +1,9 @@
-require_relative 'string_extension.rb'
+require_relative '../message/message_base.rb'
+require_relative '../message/basic_message.rb'
+require_relative '../message/email_address.rb'
+require_relative '../message/bulk_message.rb'
+require_relative '../message/bulk_recipient.rb'
+require_relative '../message/custom_header.rb'
 
 module SocketLabs
   module InjectionApi
@@ -6,6 +11,45 @@ module SocketLabs
 
       # Used by the SocketLabsClient to conduct basic validation on the message before sending to the Injection API.
       class SendValidator
+        include SocketLabs::InjectionApi
+        include SocketLabs::InjectionApi::Message
+
+        public
+        # Validate a basic email message before sending to the Injection API.
+        # @param [BasicMessage] message
+        # @return [SendResponse]
+        def validate_message(message)
+
+          result = SendResponse.new
+
+          if message.instance_of? BasicMessage
+            result = validate_basic_message(message)
+          end
+
+          if message.instance_of? BulkMessage
+            result = validate_bulk_message(message)
+          end
+
+          result
+
+        end
+
+        # Validate the ServerId and Api Key pair prior before sending to the Injection API.
+        # @param [Integer] server_id
+        # @param [String] api_key
+        # @return [SendResponse]
+        def validate_credentials(server_id, api_key)
+
+          if api_key.nil? || api_key.empty?
+            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
+          end
+
+          if server_id.nil? || server_id.empty?
+            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
+          end
+
+          SendResponse.new(result=SendResult.enum[:Success])
+        end
 
         private
         # Maximum recipient threshold
@@ -13,7 +57,6 @@ module SocketLabs
           50
         end
 
-        public
         # Validate the required fields of a BasicMessage.
         # Fields validated are Subject, From Address, Reply To (if set),
         # Message Body, and Custom Headers (if set)
@@ -40,19 +83,15 @@ module SocketLabs
             SendResult.enum[:MessageValidationInvalidCustomHeaders]
           end
 
-          SendResult.Success
+          SendResult.enum[:Success]
 
-        end
-
-        def nil_zero?
-          self.nil? || self == 0
         end
 
         # Check if the message has a subject
         # @param [MessageBase] message
         # @return [Boolean]
         def has_subject(message)
-            !StringExtension.is_nil_or_white_space(message.subject)
+          !(message.subject.nil? || message.subject.empty?)
         end
 
         # Check if the message has a valid From Email Address
@@ -64,8 +103,8 @@ module SocketLabs
             true
           end
 
-          has_html_body = !StringExtension.is_nil_or_white_space(message.html_body)
-          has_plain_text_body = !StringExtension.is_nil_or_white_space(message.plain_text_body)
+          has_html_body = !(message.html_body.nil? || message.html_body.empty?)
+          has_plain_text_body = !(message.plain_text_body.nil? || message.plain_text_body.empty?)
 
           has_html_body || has_plain_text_body
 
@@ -75,7 +114,7 @@ module SocketLabs
         # @param [MessageBase] message
         # @return [Boolean]
         def has_api_template(message)
-          !StringExtension.is_nil_or_white_space(message.api_template)
+          !(message.api_template.nil? || message.api_template.empty?)
         end
 
         # Check if the message has a valid From Email Address
@@ -83,11 +122,11 @@ module SocketLabs
         # @return [Boolean]
         def has_from_email_address(message)
 
-          if message.from_email_address.nil? || message.from_email_address.empty?
+          if message.from_email_address.nil?
            false
           end
 
-          !StringExtension.is_nil_or_white_space(message.from_email_address.email_address)
+          !(message.from_email_address.email_address.nil? || message.from_email_address.email_address.empty?)
 
         end
 
@@ -96,11 +135,11 @@ module SocketLabs
         # @return [Boolean]
         def has_valid_reply_to(message)
 
-          if message.reply_to_email_address.nil? || message.reply_to_email_address.empty?
+          if message.reply_to_email_address.nil?
             false
           end
 
-          !message.reply_to_email_address.is_valid
+          message.reply_to_email_address.is_valid
 
         end
 
@@ -140,10 +179,10 @@ module SocketLabs
         # @return [Boolean]
         def validate_recipients(message)
 
-          unless message.to_email_address.nil? || message.to_email_address.empty?
+          if message.to_recipient.nil? || message.to_recipient.empty?
             SendResponse.new(result=SendResult.enum[:RecipientValidationMissingTo])
           end
-          if message.to_email_address.length > maximum_recipients_per_message
+          if message.to_recipient.length > maximum_recipients_per_message
             SendResponse.new(result=SendResult.enum[:RecipientValidationMaxExceeded])
           end
           invalid_rec = has_invalid_recipients(message)
@@ -179,6 +218,7 @@ module SocketLabs
           if invalid.length > 0
             invalid
           end
+
           nil
 
         end
@@ -190,7 +230,7 @@ module SocketLabs
 
           invalid = Array.new
 
-          invalid_to = find_invalid_email_addresses(message.to_recipient)
+          invalid_to = find_invalid_recipients(message.to_recipient)
           unless invalid_to.nil? || invalid_to.empty?
             invalid.push(*invalid_to)
           end
@@ -198,6 +238,7 @@ module SocketLabs
           if invalid.length > 0
             invalid
           end
+
           nil
 
         end
@@ -214,10 +255,24 @@ module SocketLabs
               if email.instance_of? EmailAddress
                 unless email.is_valid
                   invalid.push(AddressResult.new(email.email_address, false, "InvalidAddress"))
+               end
+
+              elsif email.instance_of? String
+                str_email = EmailAddress.new(email)
+                unless str_email.is_valid
+                  invalid.push(AddressResult.new(str_email.email_address, false, "InvalidAddress"))
+                end
+
+              elsif email.instance_of? Hash
+                hash_email = EmailAddress.new(email[:email_address], email[:friendly_name])
+                unless hash_email.is_valid
+                  invalid.push(AddressResult.new(hash_email.email_address, false, "InvalidAddress"))
                 end
               end
             end
           end
+
+          invalid
 
         end
 
@@ -230,13 +285,29 @@ module SocketLabs
 
           unless recipients.nil? || recipients.empty?
             recipients.each do |email|
+
               if email.instance_of? BulkRecipient
                 unless email.is_valid
                   invalid.push(AddressResult.new(email.email_address, false, "InvalidAddress"))
                 end
+
+              elsif email.instance_of? String
+                str_email = BulkRecipient.new(email)
+                unless str_email.is_valid
+                  invalid.push(AddressResult.new(str_email.email_address, false, "InvalidAddress"))
+                end
+
+              elsif email.instance_of? Hash
+                hash_email = BulkRecipient.new(email[:email_address], { :friendly_name => email[:friendly_name], :merge_data => email[:merge_data] })
+                unless hash_email.is_valid
+                  invalid.push(AddressResult.new(hash_email.email_address, false, "InvalidAddress"))
+                end
               end
+
             end
           end
+
+          invalid
 
         end
 
@@ -258,6 +329,7 @@ module SocketLabs
             recipient_count += message.bcc_email_address.length
           end
           recipient_count
+
         end
 
         # Check if the list of custom header is valid
@@ -285,10 +357,13 @@ module SocketLabs
 
           valid_base = validate_base_message(message)
           if valid_base == SendResult.enum[:Success]
-            validate_email_addresses(message)
+            result = validate_email_addresses(message)
+          else
+            result = SendResponse.new(result=valid_base)
           end
 
-          SendResponse.new(result=valid_base)
+          result
+
         end
 
         # @param [BasicMessage] message
@@ -297,43 +372,13 @@ module SocketLabs
 
           valid_base = validate_base_message(message)
           if valid_base == SendResult.enum[:Success]
-            validate_recipients(message)
+            result = validate_recipients(message)
+          else
+            result = SendResponse.new(result=valid_base)
           end
 
-          SendResponse.new(result=valid_base)
+          result
 
-        end
-
-        # Validate a basic email message before sending to the Injection API.
-        # @param [BasicMessage] message
-        # @return [SendResponse]
-        def validate_message(message)
-
-          if message.instance_of? BasicMessage
-            validate_basic_message(message)
-          end
-
-          if message.instance_of? BulkMessage
-            validate_bulk_message(message)
-          end
-
-        end
-
-        # Validate the ServerId and Api Key pair prior before sending to the Injection API.
-        # @param [Integer] server_id
-        # @param [String] api_key
-        # @return [SendResponse]
-        def validate_credentials(server_id, api_key)
-
-          unless StringExtension.is_nil_or_white_space(api_key)
-            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
-          end
-
-          unless StringExtension.is_nil_or_white_space(server_id) && server_id > 0
-            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
-          end
-
-          SendResponse.new(result=SendResult.enum[:Success])
         end
 
       end

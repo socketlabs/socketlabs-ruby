@@ -5,45 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85d88e06-b233-47b5-8542-3cede01dcf1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/html/SampleEmail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/img/bus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs-ruby.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/address_result.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/proxy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_response.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/socketlabsclient.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socketlabs-ruby.gemspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/socketlabs-ruby.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/socketlabs-ruby.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_request_factory.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/address_result.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/send_validator.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/address_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/address_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/attachment_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/attachment_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/custom_header_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/custom_header_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/injection_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/injection_request.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/injection_response_dto.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/injection_response_dto.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/merge_data_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/merge_data_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/merge_field_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/merge_field_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/message_json.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/message_json.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/message_result_dto.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/message_result_dto.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/core/string_extension.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/basic_message.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/bulk_recipient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/custom_header.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/email_address.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/helpers/to_email_address.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/merge_data.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/merge_data.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/message_base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/message/send_result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socketlabs/injectionapi/socketlabsclient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/version.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_complex.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs-ruby.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs-ruby.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +29,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/socketlabs_ruby@test.rcov" NAME="test Coverage Results" MODIFIED="1578580813469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@test.rcov" NAME="basic_send_complex Coverage Results" MODIFIED="1579119951554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_complex.rcov" NAME="bulk_send_complex Coverage Results" MODIFIED="1579120882614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1377853674">
@@ -64,14 +42,14 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -80,14 +58,17 @@
           <entry key="LICENSE" value="1" />
           <entry key="gemfile" value="2" />
           <entry key="gemspec" value="1" />
-          <entry key="rb" value="151" />
+          <entry key="html" value="1" />
+          <entry key="rb" value="185" />
+          <entry key="rdebug-ide" value="1" />
           <entry key="version" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Ruby" value="156" />
+          <entry key="Ruby" value="191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -95,13 +76,13 @@
           <entry key="Gemfile" value="2" />
           <entry key="gemfile" value="2" />
           <entry key="gemspec" value="92" />
-          <entry key="rb" value="10722" />
+          <entry key="rb" value="14365" />
           <entry key="version" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Ruby" value="10835" />
+          <entry key="Ruby" value="14478" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.actions.runAnything">
@@ -117,107 +98,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="128" column="30" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="30" />
-              <folding>
-                <element signature="e#241#569#0" />
-                <element signature="e#581#1191#0" />
-                <element signature="e#1203#1454#0" />
-                <element signature="e#165#695#0" />
-                <element signature="e#466#526#0" />
-                <element signature="e#574#995#0" />
-                <element signature="e#1189#1340#0" />
-                <element signature="e#1511#1571#0" />
-                <element signature="e#1619#2040#0" />
-                <element signature="e#2556#2618#0" />
-                <element signature="e#2666#3091#0" />
-                <element signature="e#3515#4643#0" />
-                <element signature="e#5816#6129#0" />
-                <element signature="e#6207#6279#0" />
-                <element signature="e#5242#5680#0" />
-                <element signature="e#6723#6773#0" />
-                <element signature="e#7569#7982#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb">
+        <entry file="file://$PROJECT_DIR$/examples/basic/basic_send_complex.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="47" lean-forward="true" selection-start-line="9" selection-end-line="47" />
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
               <folding>
-                <element signature="e#180#468#0" />
-                <element signature="e#772#1411#0" />
-                <element signature="e#666#1066#0" />
+                <element signature="e#219#6438#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/socketlabs-ruby.rb">
+        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_request_factory.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+            <state relative-caret-position="188">
+              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+              <folding>
+                <element signature="e#1680#2705#0" />
+                <element signature="e#2715#3250#0" />
+                <element signature="e#3260#3735#0" />
+                <element signature="e#3964#4786#0" />
+                <element signature="e#5032#5474#0" />
+                <element signature="e#6411#6702#0" />
+                <element signature="e#6695#7025#0" />
+                <element signature="e#7081#7373#0" />
+                <element signature="e#8494#9597#0" />
+                <element signature="e#8397#8957#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="307" column="13" lean-forward="true" selection-start-line="285" selection-start-column="10" selection-end-line="307" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -240,7 +176,6 @@
       <find>[&quot;</find>
       <find>MessageJson</find>
       <find>string</find>
-      <find>add_custom_header</find>
       <find>&quot;:</find>
       <find>:</find>
       <find>=&gt;</find>
@@ -248,6 +183,13 @@
       <find>SendResult.new.result</find>
       <find>as_json</find>
       <find>&quot;=&gt;&quot;</find>
+      <find>add_custom_header</find>
+      <find>nil_zero?</find>
+      <find>SendGrid</find>
+      <find>CustomHeader</find>
+      <find>MergeData</find>
+      <find>length</find>
+      <find>reply_to_email_address</find>
     </findStrings>
     <replaceStrings>
       <replace>:</replace>
@@ -268,10 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/socketlabs/injectionapi/core/helpers/to_email_address.rb" />
-        <option value="$PROJECT_DIR$/socketlabs/injectionapi/message/helpers/to_email_address.rb" />
-        <option value="$PROJECT_DIR$/socketlabs/injectionapi/core/string_extension.rb" />
-        <option value="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/merge_data_json.rb" />
         <option value="$PROJECT_DIR$/socketlabs/injectionapi/core/serialization/message_result_dto.rb" />
         <option value="$PROJECT_DIR$/socketlabs/injectionapi/message/email_address.rb" />
         <option value="$PROJECT_DIR$/socketlabs/injectionapi/message/custom_header.rb" />
@@ -301,22 +239,28 @@
         <option value="$PROJECT_DIR$/gemfile" />
         <option value="$PROJECT_DIR$/socketlabs-ruby.gemspec" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/socketlabsclient.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/merge_data.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/attachment_json.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/address_json.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/message_json.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs-ruby.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb" />
-        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/simple_message.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs-ruby.rb" />
         <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb" />
         <option value="$PROJECT_DIR$/examples/test.rb" />
+        <option value="$PROJECT_DIR$/examples/basic_send_complex.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb" />
+        <option value="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_request_factory.rb" />
+        <option value="$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb" />
+        <option value="$PROJECT_DIR$/examples/basic/basic_send_complex.rb" />
       </list>
     </option>
   </component>
@@ -326,7 +270,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-64" />
     <option name="y" value="-8" />
     <option name="width" value="1546" />
@@ -371,6 +315,18 @@
             <path>
               <item name="socketlabs-ruby" type="b2602c69:ProjectViewProjectNode" />
               <item name="socketlabs-ruby" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="basic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="socketlabs-ruby" type="b2602c69:ProjectViewProjectNode" />
+              <item name="socketlabs-ruby" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="bulk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="socketlabs-ruby" type="b2602c69:ProjectViewProjectNode" />
+              <item name="socketlabs-ruby" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -400,7 +356,8 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="socketlabs" type="462c0819:PsiDirectoryNode" />
               <item name="injectionapi" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="serialization" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="socketlabs-ruby" type="b2602c69:ProjectViewProjectNode" />
@@ -409,7 +366,6 @@
               <item name="socketlabs" type="462c0819:PsiDirectoryNode" />
               <item name="injectionapi" type="462c0819:PsiDirectoryNode" />
               <item name="message" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -419,18 +375,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples/basic" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\socketlabs-ruby\examples\bulk" />
+      <recent name="C:\Projects\socketlabs-ruby\examples" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi\message" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\socketlabs-ruby\examples\basic" />
       <recent name="C:\Projects\socketlabs-ruby\lib" />
       <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi" />
       <recent name="C:\Projects\socketlabs-ruby" />
-      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi\message" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\socketlabs-ruby\examples" />
-      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi" />
       <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi\message" />
     </key>
   </component>
@@ -453,24 +412,42 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+  <component name="RunManager" selected="Ruby.bulk_send_complex">
+    <configuration name="basic_send_complex" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="socketlabs-ruby" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="ruby-2.2.6-p396" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/test.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_complex.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="bulk_send_complex" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send_complex.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Ruby.bulk_send_complex" />
+      <item itemvalue="Ruby.basic_send_complex" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Ruby.test" />
+        <item itemvalue="Ruby.basic_send_complex" />
       </list>
     </recent_temporary>
   </component>
@@ -498,23 +475,24 @@
       <workItem from="1577995758496" duration="15836000" />
       <workItem from="1578319256496" duration="906000" />
       <workItem from="1578424576814" duration="24144000" />
+      <workItem from="1578583612651" duration="21373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68271000" />
+    <option name="totallyTimeSpent" value="89644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49626866" weight="0.3253796" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.72867805" visible="true" weight="0.29501083" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.72867805" visible="true" weight="0.36117136" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -562,33 +540,67 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/examples/test.rb</url>
-          <line>137</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb</url>
+          <line>174</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/examples/test.rb</url>
-          <line>129</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/examples/basic/basic_send_complex.rb</url>
+          <line>194</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="RubyRunConfigurationType">
-        <watch expression="value[:email_address]" language="ruby" />
-        <watch expression="value[:friendly_name]" language="ruby" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>value[:friendly_name]</expression-string>
+        <expression-string>result.to_json</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>value[:email_address]</expression-string>
+        <expression-string>maximum_recipients_per_message</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.to_recipient.empty?</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.to_recipient.nil?</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>valid_name &amp;&amp; valid_value</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>191.chr</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>strip_or_self!(parts[0])</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.from_email_address.empty?</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.from_email_address.nil?</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.from_email_address</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -659,16 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#195#11784#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketlabs/version.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -694,44 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" lean-forward="true" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/merge_data.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/socketlabsclient.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -770,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/merge_data_json.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#524#601#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/merge_field_json.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -801,83 +755,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs-ruby.rb">
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        <state relative-caret-position="187">
+          <caret line="11" column="87" lean-forward="true" selection-start-line="11" selection-start-column="87" selection-end-line="11" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/helpers/to_email_address.rb">
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/simple_message.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" lean-forward="true" selection-start-line="9" selection-end-line="47" />
+        <state relative-caret-position="119">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby/Ruby24-x64/lib/ruby/2.4.0/base64.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/html/SampleEmail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/merge_data.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/serialization/merge_data_json.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
-            <element signature="e#180#468#0" />
-            <element signature="e#772#1411#0" />
-            <element signature="e#666#1066#0" />
+            <element signature="e#524#601#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb">
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs-ruby.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/socketlabsclient.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby/Ruby24-x64/lib/ruby/gems/2.4.0/gems/ruby-debug-ide-0.7.0.beta6/bin/rdebug-ide">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/message_base.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/custom_header.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_message.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/basic_message.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="128" column="30" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="30" />
-          <folding>
-            <element signature="e#241#569#0" />
-            <element signature="e#581#1191#0" />
-            <element signature="e#1203#1454#0" />
-            <element signature="e#165#695#0" />
-            <element signature="e#466#526#0" />
-            <element signature="e#574#995#0" />
-            <element signature="e#1189#1340#0" />
-            <element signature="e#1511#1571#0" />
-            <element signature="e#1619#2040#0" />
-            <element signature="e#2556#2618#0" />
-            <element signature="e#2666#3091#0" />
-            <element signature="e#3515#4643#0" />
-            <element signature="e#5816#6129#0" />
-            <element signature="e#6207#6279#0" />
-            <element signature="e#5242#5680#0" />
-            <element signature="e#6723#6773#0" />
-            <element signature="e#7569#7982#0" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/test.rb">
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="278">
+          <caret line="318" column="3" lean-forward="true" selection-start-line="318" selection-start-column="3" selection-end-line="318" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/attachment.rb">
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="215">
+          <caret line="39" selection-start-line="39" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/send_validator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="307" column="13" lean-forward="true" selection-start-line="285" selection-start-column="10" selection-end-line="307" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_request_factory.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="e#1680#2705#0" />
+            <element signature="e#2715#3250#0" />
+            <element signature="e#3260#3735#0" />
+            <element signature="e#3964#4786#0" />
+            <element signature="e#5032#5474#0" />
+            <element signature="e#6411#6702#0" />
+            <element signature="e#6695#7025#0" />
+            <element signature="e#7081#7373#0" />
+            <element signature="e#8494#9597#0" />
+            <element signature="e#8397#8957#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
+          <folding>
+            <element signature="e#219#6438#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/basic/basic_send_complex.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
         </state>
       </provider>
     </entry>

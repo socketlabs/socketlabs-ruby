@@ -14,6 +14,8 @@ module SocketLabs
         #   email_address3.merge_data.push(MergeData.new("name1", "value1"))
         #   email_address3.add_merge_data("name2", "value2")
         class BulkRecipient
+          include SocketLabs::InjectionApi
+          include SocketLabs::InjectionApi::Core
 
         # A valid email address.
         attr_accessor :email_address
@@ -24,19 +26,34 @@ module SocketLabs
 
         # Creates a new instance of the BulkRecipient class.
         # @param [String] email_address
-        # @param [String] friendly_name
-        # @param [Array] merge_data Array of of MergeData
+        # @param [Hash] arguments
         def initialize(
             email_address,
-            friendly_name = nil,
-            merge_data = nil
+            arguments = nil
         )
           @email_address = email_address
-          @friendly_name = friendly_name
-          @merge_data = []
-          unless merge_data.nil? || merge_data.empty?
-            @merge_data = merge_data
+          @merge_data = Array.new
+
+          unless arguments.nil? || arguments.empty?
+
+            unless arguments[:friendly_name].nil? || arguments[:friendly_name].empty?
+              @friendly_name = arguments[:friendly_name]
+            end
+
+            unless arguments[:merge_data].nil? || arguments[:merge_data].empty?
+              unless arguments[:merge_data].nil? || arguments[:merge_data].empty?
+                arguments[:merge_data].each do |value|
+                  if value.instance_of? MergeData
+                    @merge_data.push(value)
+                  elsif value.instance_of? Hash
+                    @merge_data.push(MergeData.new(value[:key], value[:value]))
+                  end
+                end
+              end
+            end
+
           end
+
         end
 
         # Add to an Array of MergeData
@@ -55,7 +72,7 @@ module SocketLabs
         # Represents the BulkRecipient as a string
         # @return [String]
         def to_s
-          if StringExtension.is_nil_or_white_space(@friendly_name)
+          if @friendly_name.nil? || @friendly_name.empty?
             @email_address
           else
             "#{@friendly_name} <#{@email_address}>"

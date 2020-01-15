@@ -1,11 +1,14 @@
-require_relative "../lib/socketlabs-ruby.rb"
+require_relative "../../lib/socketlabs-ruby.rb"
 require "json"
 
-class Test
+class BasicSendComplex
   include SocketLabs::InjectionApi
+  include SocketLabs::InjectionApi::Core
   include SocketLabs::InjectionApi::Message
 
-  def execute
+  private
+  def get_message
+
     message = BasicMessage.new
 
     message.subject = "Sending A Complex Test Message (Basic Send))"
@@ -125,18 +128,76 @@ class Test
 
     message.add_bcc_email_address(email_addresses)
 
+    # Adding Custom Headers
+    # --------
+    # Add CustomHeader using a list
+    headers = Array.new
+    headers.push(CustomHeader.new("example-type", "basic-send-complex-example"))
+    headers.push(CustomHeader.new("message-contains", "attachments, headers"))
+
+    message.custom_headers = headers
+
+
+    # Add CustomHeader directly to the list
+    message.custom_headers.push(CustomHeader.new("message-has-attachments", "true"))
+
+    # Add CustomHeader using the add_custom_header function
+    message.add_custom_header("testMessageHeader", "I am a message header")
+    message.add_custom_header(CustomHeader.new("testMessageHeader2", "I am another message header"))
 
     # Adding Attachments
     attachment1 = Attachment.new(
-                      name:"bus",
-                      file_path:"img/bus.png",
-                      mime_type:"image/png"
+        name:"bus",
+        file_path:"../img/bus.png",
+        mime_type:"image/png"
     )
     message.attachments.push(attachment1)
 
+    # Add Attachment using the add_attachment function
+    attachment2 = Attachment.new(
+        name:"bus2",
+        file_path:"../img/bus.png",
+        mime_type:"image/png"
+    )
+    attachment2.content_id = "bus"
+    message.add_attachment(attachment2)
 
+    # Add Attachment a filePath {string} to the array
+    message.add_attachment(Attachment.new(file_path:"../html/SampleEmail.html"))
+
+    # Add Attachment using bytes of the file
+    file_path = "../img/bus.png"
+    file = File.open(file_path, "rb")
+    data = Base64.encode64(file.read)
+
+    attachment4 = Attachment.new(
+        name: "yellow-bus.png",
+        mime_type: "image/png",
+        content: data
+    )
+
+    # Add CustomHeaders to Attachment
+    attachment4.custom_headers.push(CustomHeader.new("Color", "Yellow"))
+    attachment4.add_custom_header("Place", "Beach")
+
+    message.add_attachment(attachment4)
+
+    message
+  end
+
+  public
+  def execute
+
+    message = get_message
     puts message
 
+    validator = SendValidator.new
+    result = validator.validate_message(message)
+    puts result
+
+    factory = InjectionRequestFactory.new(10000, "abcdefgxyz")
+    factory.generate_request(message)
+    puts factory
 
     SocketLabsClient.new(10000, "abcdefgxyz")
 
@@ -147,7 +208,7 @@ class Test
     # puts JSON.pretty_generate(json)
 
   end
+
 end
 
-
-res = Test.new.execute
+res = BasicSendComplex.new.execute

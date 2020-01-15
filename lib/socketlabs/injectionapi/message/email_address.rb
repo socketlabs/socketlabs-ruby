@@ -9,6 +9,8 @@ module SocketLabs
         #   email_address = EmailAddress.new("recipient@example.com", "Recipient 1")
 
         class EmailAddress
+          include SocketLabs::InjectionApi
+          include SocketLabs::InjectionApi::Core
 
         # the email address
         attr_accessor :email_address
@@ -29,7 +31,7 @@ module SocketLabs
         # Determines if the EmailAddress is valid. Does simple syntax validation on the email address.
         # @return [Boolean]
         def is_valid
-          StringExtension.new.is_valid_email_address(@email_address)
+          StringExtension.is_valid_email_address(@email_address)
         end
 
         # Represents the EmailAddress as a string

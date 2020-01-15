@@ -4,8 +4,8 @@ module SocketLabs
 
     class SendResult
       # Send Result hash
-      @@enum = {
-
+      def self.enum
+      {
         # An error has occurred that was unforeseen
         :UnknownError =>
           {
@@ -312,8 +312,8 @@ module SocketLabs
           }
 
       }
+      end
 
     end
-
   end
 end

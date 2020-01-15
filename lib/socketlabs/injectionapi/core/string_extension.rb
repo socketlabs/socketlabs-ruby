@@ -4,8 +4,8 @@ module SocketLabs
 
       class StringExtension
 
-        def self.is_nil_or_white_space(value)
-          value.nil? || value.empty?
+        def self.strip_or_self!(str)
+          str.strip! || str if str
         end
 
         def self.is_valid_email_address(email_address)
@@ -16,22 +16,21 @@ module SocketLabs
             false
           end
 
-          parts = Array.new
-          email_address.each_line('@'){|x| parts >> x}
+          parts = email_address.split('@')
 
           if parts.length != 2
             false
           end
 
-          if parts[0].strip.length < 1
+          if strip_or_self!(parts[0]).length < 1
             false
           end
-          if parts[1].strip.length < 1
+          if strip_or_self!(parts[1]).length < 1
             false
           end
 
-          [',', ' ', ';', 191.chr.ord].each do |x|
-            if email_address.index(x)
+          [',', ' ', ';', 191.chr].each do |x|
+            if email_address.include? x
               false
             end
           end
@@ -41,6 +40,7 @@ module SocketLabs
       end
 
       end
+
 
     end
   end

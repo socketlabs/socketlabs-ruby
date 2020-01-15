@@ -34,12 +34,10 @@ module SocketLabs
         # Determines if the CustomHeader is valid.
         # @return [Boolean]
         def is_valid
-          valid_name = StringExtension.is_nil_or_white_space(@name)
-          valid_value = StringExtension.is_nil_or_white_space(@value)
-          if valid_name && valid_value
-            true
-          end
-          false
+          valid_name = !(@name.nil? || @name.empty?)
+          valid_value = !(@value.nil? || @value.empty?)
+
+          valid_name && valid_value
         end
 
         # Represents the CustomHeader name-value pair as a String
