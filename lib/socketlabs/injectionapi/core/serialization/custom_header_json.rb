@@ -25,7 +25,7 @@ module SocketLabs
 
           # build json hash for CustomHeaderJson
           # @return [hash]
-          def to_json
+          def to_hash
             {
               :name => @name,
               :value => @value

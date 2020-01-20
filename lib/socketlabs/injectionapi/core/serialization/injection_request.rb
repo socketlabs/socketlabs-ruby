@@ -19,8 +19,8 @@ module SocketLabs
           # @param [String] server_id
           # @param [String] messages
           def initialize(
-            api_key = nil, 
-            server_id = nil, 
+            server_id = nil,
+            api_key = nil,
             messages = nil
           )
             @api_key = api_key
@@ -30,7 +30,7 @@ module SocketLabs
 
           # build json hash for InjectionRequest
           # @return [hash]
-          def to_json
+          def to_hash
 
             json = {
               :serverId => @server_id,
@@ -39,7 +39,9 @@ module SocketLabs
 
             if @messages.length > 0
               e = Array.new
-              @messages.each{ |x| e >> x.to_json}
+              @messages.each do |value|
+                e.push(value.to_hash)
+              end
               json[:messages] = e
             end
             

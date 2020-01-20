@@ -1,9 +1,12 @@
+require_relative '../../address_result.rb'
+
 module SocketLabs
   module InjectionApi
     module Core
       module Serialization
 
         class MessageResultDto
+          include SocketLabs::InjectionApi
 
           attr_accessor :index
           attr_accessor :error_code
@@ -26,30 +29,32 @@ module SocketLabs
           def address_results=(value) 
             @address_results = Array.new
                         
-            if value.nil? || value.empty
+            unless value.nil? || value.empty?
                 value.each do |v1|                  
-                  if v1.instance_of? MergeFieldJson
+                  if v1.instance_of? AddressResult
                     @address_results.push(v1)
                   end
-                end                       
+                end
 
+            end
           end
 
 
-          def to_json
+          def to_hash
             json = {
                 :ErrorCode => @error_code,
                 :Index => @index
             }
             if @address_results.length > 0
               e = Array.new
-              @address_results.each{ |x| e >> x.to_json}
+              @address_results.each do |value|
+                e.push(value.to_hash)
+              end
+
               json[:AddressResult] = e
             end
             json
           end
-
-        end
 
         end
       end

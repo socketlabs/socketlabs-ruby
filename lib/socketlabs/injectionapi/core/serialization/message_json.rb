@@ -1,5 +1,3 @@
-require_relative '../../core/string_extension.rb'
-
 module SocketLabs
   module InjectionApi
     module Core
@@ -22,7 +20,7 @@ module SocketLabs
           # the optional character set. Default is UTF-8
           attr_accessor :charset
           # the from email address.
-          attr_accessor :from_email
+          attr_accessor :from_email_address
           # the optional reply to email address.
           attr_accessor :reply_to
           # the the MergeDataJson for the message
@@ -38,9 +36,9 @@ module SocketLabs
             @mailing_id = nil
             @message_id = nil
             @charset = nil
-            @from_email = nil
+            @from_email_address = nil
             @reply_to = nil
-            @merge_data = nil
+            @merge_data = MergeDataJson.new
             @attachments = Array.new
             @custom_headers = Array.new
             @to_email_address = Array.new
@@ -158,76 +156,86 @@ module SocketLabs
 
           # build json hash for MessageJson
           # @return [hash]
-          def to_json
+          def to_hash
 
             json = {
-                :from => @from_email.to_json
+                :from => @from_email_address.to_hash
             }
 
-            if StringExtension.is_nil_or_white_space(@subject)
+            unless @subject.nil? || @subject.empty?
               json[:subject] = @subject
             end
 
-            if StringExtension.is_nil_or_white_space(@html_body)
+            unless @html_body.nil? || @html_body.empty?
               json[:htmlBody] = @html_body
             end
 
-            if StringExtension.is_nil_or_white_space(@plain_text_body)
+            unless @plain_text_body.nil? || @plain_text_body.empty?
               json[:textBody] = @plain_text_body
             end
 
-            if StringExtension.is_nil_or_white_space(@api_template)
+            unless @api_template.nil? || @api_template.empty?
               json[:apiTemplate] = @api_template
             end
 
-            if StringExtension.is_nil_or_white_space(@mailing_id)
+            unless @mailing_id.nil? || @mailing_id.empty?
               json[:mailingId] = @mailing_id
             end
 
-            if StringExtension.is_nil_or_white_space(@message_id)
+            unless @message_id.nil? || @message_id.empty?
               json[:messageId] = @message_id
             end
 
-            if StringExtension.is_nil_or_white_space(@reply_to)
-              json[:replyTo] = @reply_to
+            unless @reply_to.nil?
+              json[:replyTo] = @reply_to.to_hash
             end
 
-            if StringExtension.is_nil_or_white_space(@charset)
+            unless @charset.nil? || @charset.empty?
               json[:charSet] = @charset
             end
 
-            if @to_email_address.length > 0
+            unless @to_email_address.nil? || @to_email_address.length == 0
               e = Array.new
-              @to_email_address.each{ |x| e >> x.to_json}
+              @to_email_address.each do |value|
+                  e.push(value.to_hash)
+              end
               json[:to] = e
             end
 
-            if @cc_email_address.length > 0
+            unless @cc_email_address.nil? || @cc_email_address.length == 0
               e = Array.new
-              @cc_email_address.each{ |x| e >> x.to_json}
+              @cc_email_address.each do |value|
+                e.push(value.to_hash)
+              end
               json[:cc] = e
             end
 
-            if @bcc_email_address.length > 0
+            unless @bcc_email_address.nil? || @bcc_email_address.length == 0
               e = Array.new
-              @bcc_email_address.each{ |x| e >> x.to_json}
+              @bcc_email_address.each do |value|
+                e.push(value.to_hash)
+              end
               json[:bcc] = e
             end
 
-            if @custom_headers.length > 0
+            unless @custom_headers.nil? || @custom_headers.length == 0
               e = Array.new
-              @custom_headers.each{ |x| e >> x.to_json}
+              @custom_headers.each do |value|
+                e.push(value.to_hash)
+              end
               json[:customHeaders] = e
             end
 
-            if @attachments.length > 0
+            unless @attachments.nil? || @attachments.length == 0
               e = Array.new
-              @attachments.each{ |x| e >> x.to_json}
+              @attachments.each do |value|
+                e.push(value.to_hash)
+              end
               json[:attachments] = e
             end
 
-            if @merge_data.nil?
-              json[:mergeData] = @merge_data.to_json
+            unless @merge_data.nil?
+              json[:mergeData] = @merge_data.to_hash
             end
 
             json

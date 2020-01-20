@@ -25,7 +25,7 @@ module SocketLabs
 
           # build json hash for MergeFieldJson
           # @return [hash]
-          def to_json
+          def to_hash
             {
               :field => @field,
               :value => @value

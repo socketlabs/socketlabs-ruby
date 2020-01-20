@@ -27,8 +27,8 @@ module SocketLabs
 
           # build json hash for AddressJson
           # @return [hash]
-          def to_json
-            if StringExtension.is_nil_or_white_space(@friendly_name)
+          def to_hash
+            if @friendly_name.nil? || @friendly_name.empty?
               {
                 :emailAddress  => @email_address
               }

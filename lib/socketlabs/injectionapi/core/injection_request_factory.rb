@@ -10,15 +10,15 @@ require_relative 'serialization/attachment_json.rb'
 require_relative 'serialization/custom_header_json.rb'
 require_relative 'serialization/message_json.rb'
 require_relative 'serialization/merge_data_json.rb'
-# require_relative 'serialization/custom_header_json.rb'
 
 module SocketLabs
   module InjectionApi
-    module Message
+    module Core
       class InjectionRequestFactory
         include SocketLabs::InjectionApi
-        include SocketLabs::InjectionApi::Message
         include SocketLabs::InjectionApi::Core
+        include SocketLabs::InjectionApi::Message
+        include SocketLabs::InjectionApi::Core::Serialization
 
         attr_reader :server_id
         attr_reader :api_key
@@ -33,19 +33,20 @@ module SocketLabs
 
         end
 
+        # Generate the InjectionRequest for sending to the Injection Api.
+        # @param [BasicMessage, BulkMessage] message: the message object to convert
+        # @return [InjectionRequest] the converted InjectionRequest
         def generate_request(message)
 
-          result = SendResponse.new
+          request = InjectionRequest.new
 
           if message.instance_of? BasicMessage
-            result = generate_basic_message_request(message)
+            request = generate_basic_message_request(message)
           end
 
           if message.instance_of? BulkMessage
-            result = generate_bulk_message_request(message)
+            request = generate_bulk_message_request(message)
           end
-
-          result
 
         end
 
@@ -55,7 +56,7 @@ module SocketLabs
         # @return [MessageJson] the convert MessageJson object
         def generate_base_message(message)
 
-          message_json = MessageJson.new()
+          message_json = MessageJson.new
           message_json.subject = message.subject
           message_json.plain_text_body = message.plain_text_body
           message_json.html_body = message.html_body
@@ -66,12 +67,13 @@ module SocketLabs
           message_json.custom_headers = populate_custom_headers(message.custom_headers)
           message_json.attachments = populate_attachments(message.attachments)
 
-          unless message_json.api_template.nil? || message_json.api_template.empty?
+          unless message_json.api_template.nil?
               message_json.api_template = message.api_template
           end
-          if message.reply_to_email_address.nil?
-              message_json.reply_to_email_address = email_address_to_address_json(message.reply_to_email_address)
+          unless message.reply_to_email_address.nil?
+              message_json.reply_to = email_address_to_address_json(message.reply_to_email_address)
           end
+          message_json
 
         end
 
@@ -110,7 +112,7 @@ module SocketLabs
           attachments_json = Array.new
 
           attachments.each do |item|
-            if value.instance_of? Attachment
+            if item.instance_of? Attachment
 
               at_json = AttachmentJson.new
               at_json.name = item.name
@@ -149,7 +151,7 @@ module SocketLabs
           end
 
           messages_json = []
-          messages_json.append(message_json)
+          messages_json.push(message_json)
 
           InjectionRequest.new(@server_id, @api_key, messages_json)
 
@@ -193,10 +195,10 @@ module SocketLabs
         # @return [AddressJson] the converted AddressJson object
         def email_address_to_address_json(address)
 
-          if address.friendly_name.nil? || address.friendly_name.empty?
-            AddressJson.new(address.email_address)
-          else
+          unless address.friendly_name.nil? || address.friendly_name.empty?
             AddressJson.new(address.email_address, address.friendly_name)
+          else
+            AddressJson.new(address.email_address)
           end
 
         end
@@ -207,8 +209,13 @@ module SocketLabs
         def generate_bulk_message_request(message)
 
           message_json = generate_base_message(message)
-          message_json.to_email_address.append(AddressJson("%%DeliveryAddress%%", "%%RecipientName%%"))
+          message_json.to_email_address.push(AddressJson.new("%%DeliveryAddress%%", "%%RecipientName%%"))
           message_json.merge_data = populate_merge_data(message.global_merge_data, message.to_recipient)
+
+          messages_json = []
+          messages_json.push(message_json)
+
+          InjectionRequest.new(@server_id, @api_key, messages_json)
 
         end
 
@@ -249,18 +256,18 @@ module SocketLabs
               end
 
               merge_field_json = generate_merge_field_list(recipient.merge_data)
-              merge_field_json.append(MergeFieldJson.new("DeliveryAddress", recipient.email_address))
+              merge_field_json.push(MergeFieldJson.new("DeliveryAddress", recipient.email_address))
 
-              if recipient.friendly_name.nil? || recipient.friendly_name.empty?
-                merge_field_json.append(MergeFieldJson.new("RecipientName", recipient.friendly_name))
+              unless recipient.friendly_name.nil? || recipient.friendly_name.empty?
+                merge_field_json.push(MergeFieldJson.new("RecipientName", recipient.friendly_name))
               end
 
-              per_message_mf.append(merge_field_json)
+              per_message_mf.push(merge_field_json)
 
             end
           end
 
-          MergeDataJson(per_message_mf, global_mf)
+          MergeDataJson.new(per_message_mf, global_mf)
 
         end
 

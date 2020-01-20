@@ -197,7 +197,9 @@ class BasicSendComplex
 
     factory = InjectionRequestFactory.new(10000, "abcdefgxyz")
     factory.generate_request(message)
-    puts factory
+    json = factory.generate_request(message)
+    puts json
+    puts json.to_json
 
     SocketLabsClient.new(10000, "abcdefgxyz")
 

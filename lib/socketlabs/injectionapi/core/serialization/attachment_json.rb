@@ -9,7 +9,6 @@ module SocketLabs
         # To be serialized into JSON string before sending to the Injection Api.
 
         class AttachmentJson
-          include SocketLabs::InjectionApi::Core
 
           # the name of attachment
           attr_accessor :name
@@ -33,19 +32,21 @@ module SocketLabs
 
           # build json hash for AttachmentJson
           # @return [hash]
-          def to_json
+          def to_hash
             json =
             {
               :name=> @name,
-              :content=> @value,
+              :content=> @content,
               :contentType=> @mime_type
             }
-            if StringExtension.is_nil_or_white_space(@content_id)
+            unless @content_id.nil? || @content_id.empty?
               json[:contentId] = @content_id
             end
-            if @custom_headers.length > 0
+            unless @custom_headers.nil? || @custom_headers.length == 0
               e = Array.new
-              @custom_headers.each{ |x| e >> x.to_json}
+              @custom_headers.each do |value|
+                e.push(value.to_hash)
+              end
               json[:customHeaders] = e
             end
             json
