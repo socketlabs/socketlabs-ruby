@@ -50,7 +50,7 @@ module SocketLabs
           @address_results.each{ |x| e >> x.to_json}
           json[:messageResults] = e
         end
-        json
+        json.to_json
       end
 
     end

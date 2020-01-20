@@ -234,8 +234,8 @@ module SocketLabs
               json[:attachments] = e
             end
 
-            unless @merge_data.nil?
-              json[:mergeData] = @merge_data.to_hash
+            unless @merge_data.nil? || @merge_data.empty
+                json[:mergeData] = @merge_data.to_hash
             end
 
             json

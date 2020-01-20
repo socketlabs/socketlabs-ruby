@@ -74,7 +74,6 @@ class BulkSendComplex
     # Add global merge data using the add_global_merge_data function
     message.add_global_merge_data("UpSell", "BTW:  You are eligible for discount pricing when you upgrade your service!")
 
-
     # Add recipients with merge data
     # Including merge data on the recipient with the same name as the global merge data will override global merge data
     # --------
@@ -116,7 +115,6 @@ class BulkSendComplex
 
     message.custom_headers = headers
 
-
     # Add CustomHeader directly to the list
     message.custom_headers.push(CustomHeader.new("message-has-attachments", "true"))
 
@@ -134,7 +132,7 @@ class BulkSendComplex
 
     # Add Attachment using the add_attachment function
     attachment2 = Attachment.new(
-        name:"bus2",
+        name:"bus2.png",
         file_path:"../img/bus.png",
         mime_type:"image/png"
     )
@@ -176,7 +174,6 @@ class BulkSendComplex
 
     client = SocketLabsClient.new(server_id, api_key)
     response = client.send(message)
-
 
     # with proxy
     # SocketLabsClient.new(10000, "abcdefgxyz", Proxy.new("", 0000))

@@ -1,0 +1,2 @@
+class BulkSend
+end

@@ -21,10 +21,10 @@ module SocketLabs
           new_response = SendResponse.new(result_enum)
           new_response.transaction_receipt = injection_response.transaction_receipt
 
-          if result_enum == SendResult.enum[:Warning]
+          if result_enum == SendResult.enum["Warning"]
             unless injection_response.message_results.nil? || injection_response.message_results.length == 0
               error_code = injection_response.message_results[0].error_code
-              result_enum = SendResult.enum.select {|enum| enum[:value] = error_code }
+              result_enum = SendResult.enum[error_code]
               new_response.result = result_enum
             end
           end
@@ -47,7 +47,7 @@ module SocketLabs
           resp_dto = InjectionResponseDto.new
 
           if hash_body.key?(:ErrorCode)
-            resp_dto.error_code = hash_body[:ErrorCode]
+            resp_dto.error_code = SendResult.enum[hash_body[:ErrorCode]]
           end
 
           if hash_body.key?(:TransactionReceipt)
@@ -68,7 +68,7 @@ module SocketLabs
                 end
 
                 if item.key?(:AddressResults)
-                  message_dto.address_results = item[:Index]
+                  message_dto.address_results = item[:AddressResults]
                 end
 
                 if item.key?(:ErrorCode)
@@ -94,24 +94,23 @@ module SocketLabs
         def determine_send_result(response_dto, response)
 
           # HttpStatusCode.OK
-          if response.status_code == 200
-            error_code = response_dto.error_code
-            result_enum = SendResult.enum.select {|enum| enum[:value] = error_code }
-            unless result_enum.nil? || result_enum.empty?
-              result_enum = SendResult.enum[:UnknownError]
+          if response.status_code == "200"
+            result_enum = response_dto.error_code
+            if result_enum.nil? || result_enum.empty?
+              result_enum = SendResult.enum["UnknownError"]
             end
 
           # HttpStatusCode.Unauthorized
-          elsif response.status_code == 500
-            result_enum = SendResult.enum[:InternalError]
+          elsif response.status_code == "500"
+            result_enum = SendResult.enum["InternalError"]
 
           # HttpStatusCode.Unauthorized
-          elsif response.status_code == 408
-            result_enum = SendResult.enum[:Timeout]
+          elsif response.status_code == "408"
+            result_enum = SendResult.enum["Timeout"]
 
           # HttpStatusCode.Unauthorized
           else
-            result_enum = SendResult.enum[:InvalidAuthentication]
+            result_enum = SendResult.enum["InvalidAuthentication"]
 
           end
 

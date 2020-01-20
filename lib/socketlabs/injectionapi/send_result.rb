@@ -5,17 +5,16 @@ module SocketLabs
     class SendResult
       # Send Result hash
       def self.enum
-      {
-        # An error has occurred that was unforeseen
-        :UnknownError =>
           {
+        # An error has occurred that was unforeseen
+        "UnknownError" =>          {
             :name => "UnknownError",
             :value =>0,
             :message =>"An error has occurred that was unforeseen"
           },
 
         # A timeout occurred sending the message
-        :Timeout =>
+        "Timeout" =>
           {
             :name =>"Timeout",
             :value =>1,
@@ -23,7 +22,7 @@ module SocketLabs
           },
 
         # Successful send of message
-        :Success  =>
+        "Success"  =>
           {
             :name =>"Success",
             :value =>2,
@@ -31,7 +30,7 @@ module SocketLabs
           },
 
         # Warnings were found while sending the message
-        :Warning  =>
+        "Warning"  =>
           {
             :name =>"Warning",
             :value =>3,
@@ -39,7 +38,7 @@ module SocketLabs
           },
 
         # Internal server error
-        :InternalError =>
+        "InternalError" =>
           {
             :name =>"InternalError",
             :value =>4,
@@ -47,7 +46,7 @@ module SocketLabs
           },
 
         # Message has exceeded the size limit
-        :MessageTooLarge =>
+        "MessageTooLarge" =>
           {
             :name =>"MessageTooLarge",
             :value =>5,
@@ -55,7 +54,7 @@ module SocketLabs
           },
 
         # Message exceeded the maximum allowed recipient count
-        :TooManyRecipients =>
+        "TooManyRecipients" =>
           {
             :name =>"TooManyRecipients",
             :value =>6,
@@ -63,7 +62,7 @@ module SocketLabs
           },
 
         # The message request contained invalid data
-        :InvalidData =>
+        "InvalidData" =>
           {
             :name =>"InvalidData",
             :value =>7,
@@ -71,7 +70,7 @@ module SocketLabs
           },
 
         # The account is over the send quota, rate limit exceeded
-        :OverQuota =>
+        "OverQuota" =>
           {
             :name =>"OverQuota",
             :value =>8,
@@ -79,7 +78,7 @@ module SocketLabs
           },
 
         # Too many errors occurred sending the message
-        :TooManyErrors =>
+        "TooManyErrors" =>
           {
             :name =>"TooManyErrors",
             :value =>9,
@@ -87,7 +86,7 @@ module SocketLabs
           },
 
         # The serverId and apiKey combination is not valid
-        :InvalidAuthentication =>
+        "InvalidAuthentication" =>
           {
             :name =>"InvalidAuthentication",
             :value =>10,
@@ -95,7 +94,7 @@ module SocketLabs
           },
 
         # The account has been disabled
-        :AccountDisabled =>
+        "AccountDisabled" =>
           {
             :name =>"AccountDisabled",
             :value =>11,
@@ -103,7 +102,7 @@ module SocketLabs
           },
 
         # Too many messages were found on the request
-        :TooManyMessages =>
+        "TooManyMessages" =>
           {
             :name =>"TooManyMessages",
             :value =>12,
@@ -111,7 +110,7 @@ module SocketLabs
           },
 
         # No valid recipients were found on the message
-        :NoValidRecipients =>
+        "NoValidRecipients" =>
           {
             :name =>"NoValidRecipients",
             :value =>13,
@@ -119,7 +118,7 @@ module SocketLabs
           },
 
         # An invalid recipient address was found on the message
-        :InvalidAddress =>
+        "InvalidAddress" =>
           {
             :name =>"InvalidAddress",
             :value =>14,
@@ -127,7 +126,7 @@ module SocketLabs
           },
 
         # An invalid attachment was found on the message
-        :InvalidAttachment =>
+        "InvalidAttachment" =>
           {
             :name =>"InvalidAttachment",
             :value =>15,
@@ -135,7 +134,7 @@ module SocketLabs
           },
 
         # No messages were found on the request
-        :NoMessages =>
+        "NoMessages" =>
           {
             :name =>"NoMessages",
             :value =>16,
@@ -143,7 +142,7 @@ module SocketLabs
           },
 
         # No message content was found on the request
-        :EmptyMessage =>
+        "EmptyMessage" =>
           {
             :name =>"EmptyMessage",
             :value =>17,
@@ -151,7 +150,7 @@ module SocketLabs
           },
 
         # No subject was found on the message
-        :EmptySubject =>
+        "EmptySubject" =>
           {
             :name =>"EmptySubject",
             :value =>18,
@@ -159,7 +158,7 @@ module SocketLabs
           },
 
         # An invalid From address was found on the message
-        :InvalidFrom =>
+        "InvalidFrom" =>
           {
             :name =>"InvalidFrom",
             :value =>19,
@@ -167,7 +166,7 @@ module SocketLabs
           },
 
         # No To addresses were found on the message
-        :EmptyToAddress =>
+        "EmptyToAddress" =>
           {
             :name =>"EmptyToAddress",
             :value =>20,
@@ -175,7 +174,7 @@ module SocketLabs
           },
 
         # No valid message body was found on the message
-        :NoValidBodyParts =>
+        "NoValidBodyParts" =>
           {
             :name =>"NoValidBodyParts",
             :value =>21,
@@ -183,7 +182,7 @@ module SocketLabs
           },
 
         # An invalid templateId was found on the message
-        :InvalidTemplateId =>
+        "InvalidTemplateId" =>
           {
             :name =>"InvalidTemplateId",
             :value =>22,
@@ -191,7 +190,7 @@ module SocketLabs
           },
 
         # The specified templateId has no content associated with it
-        :TemplateHasNoContent =>
+        "TemplateHasNoContent" =>
           {
             :name =>"TemplateHasNoContent",
             :value =>23,
@@ -199,7 +198,7 @@ module SocketLabs
           },
 
         # A conflict occurred due to the use of templateId and HtmlBody or TextBody
-        :MessageBodyConflict =>
+        "MessageBodyConflict" =>
           {
             :name =>"MessageBodyConflict",
             :value =>24,
@@ -207,7 +206,7 @@ module SocketLabs
           },
 
         # Invalid merge data was found on the message
-        :InvalidMergeData =>
+        "InvalidMergeData" =>
           {
             :name =>"InvalidMergeData",
             :value =>25,
@@ -215,7 +214,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Authentication validation failed, missing or invalid ServerId or ApiKey
-        :AuthenticationValidationFailed =>
+        "AuthenticationValidationFailed" =>
           {
             :name =>"AuthenticationValidationFailed",
             :value =>26,
@@ -223,7 +222,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message exceeded maximum recipient count
-        :RecipientValidationMaxExceeded =>
+        "RecipientValidationMaxExceeded" =>
           {
             :name =>"RecipientValidationMaxExceeded",
             :value =>27,
@@ -231,7 +230,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: No recipients were found in the message
-        :RecipientValidationNoneInMessage =>
+        "RecipientValidationNoneInMessage" =>
           {
             :name =>"RecipientValidationNoneInMessage",
             :value =>28,
@@ -239,7 +238,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message is missing From address
-        :EmailAddressValidationMissingFrom =>
+        "EmailAddressValidationMissingFrom" =>
           {
             :name =>"EmailAddressValidationMissingFrom",
             :value =>29,
@@ -247,7 +246,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message is missing To address(es)
-        :RecipientValidationMissingTo =>
+        "RecipientValidationMissingTo" =>
           {
             :name =>"RecipientValidationMissingTo",
             :value =>30,
@@ -255,7 +254,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message contains an invalid From address
-        :EmailAddressValidationInvalidFrom =>
+        "EmailAddressValidationInvalidFrom" =>
           {
             :name =>"EmailAddressValidationInvalidFrom",
             :value =>31,
@@ -263,7 +262,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message does not contain a subject
-        :MessageValidationEmptySubject =>
+        "MessageValidationEmptySubject" =>
           {
             :name =>"MessageValidationEmptySubject",
             :value =>32,
@@ -271,7 +270,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message does not contain a message body
-        :MessageValidationEmptyMessage =>
+        "MessageValidationEmptyMessage" =>
           {
             :name =>"MessageValidationEmptyMessage",
             :value =>33,
@@ -279,7 +278,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message contains invalid custom headers
-        :MessageValidationInvalidCustomHeaders =>
+        "MessageValidationInvalidCustomHeaders" =>
           {
             :name =>"MessageValidationInvalidCustomHeaders",
             :value =>34,
@@ -287,7 +286,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message contains invalid ReplyTo address
-        :RecipientValidationInvalidReplyTo =>
+        "RecipientValidationInvalidReplyTo" =>
           {
             :name =>"RecipientValidationInvalidReplyTo",
             :value =>35,
@@ -295,7 +294,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Message contains invalid recipients
-        :RecipientValidationInvalidRecipients =>
+        "RecipientValidationInvalidRecipients" =>
           {
             :name =>"RecipientValidationInvalidRecipients",
             :value =>36,
@@ -303,7 +302,7 @@ module SocketLabs
           },
 
         # SDK Validation Error: Expected messageType of basic or bulk
-        :MessageValidationInvalidMessageType =>
+        "MessageValidationInvalidMessageType" =>
           {
             :name =>"MessageValidationInvalidMessageType",
             :value =>37,
@@ -311,7 +310,7 @@ module SocketLabs
 
           }
 
-      }
+          }
       end
 
     end

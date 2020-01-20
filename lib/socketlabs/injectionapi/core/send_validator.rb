@@ -41,14 +41,14 @@ module SocketLabs
         def validate_credentials(server_id, api_key)
 
           if api_key.nil? || api_key.empty?
-            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
+            SendResponse.new(result=SendResult.enum["AuthenticationValidationFailed"])
           end
 
           if server_id.nil? || server_id.empty?
-            SendResponse.new(result=SendResult.enum[:AuthenticationValidationFailed])
+            SendResponse.new(result=SendResult.enum["AuthenticationValidationFailed"])
           end
 
-          SendResponse.new(result=SendResult.enum[:Success])
+          SendResponse.new(result=SendResult.enum["Success"])
         end
 
         private
@@ -65,25 +65,25 @@ module SocketLabs
         def validate_base_message(message)
 
           unless has_subject(message)
-            SendResult.enum[:MessageValidationEmptySubject]
+            SendResult.enum["MessageValidationEmptySubject"]
           end
           unless has_from_email_address(message)
-            SendResult.enum[:EmailAddressValidationMissingFrom]
+            SendResult.enum["EmailAddressValidationMissingFrom"]
           end
           unless message.from_email_address.is_valid
-            SendResult.enum[:EmailAddressValidationInvalidFrom]
+            SendResult.enum["EmailAddressValidationInvalidFrom"]
           end
           unless has_valid_reply_to(message)
-            SendResult.enum[:RecipientValidationInvalidReplyTo]
+            SendResult.enum["RecipientValidationInvalidReplyTo"]
           end
           unless has_message_body(message)
-            SendResult.enum[:MessageValidationEmptyMessage]
+            SendResult.enum["MessageValidationEmptyMessage"]
           end
           unless has_valid_custom_headers(message.custom_headers)
-            SendResult.enum[:MessageValidationInvalidCustomHeaders]
+            SendResult.enum["MessageValidationInvalidCustomHeaders"]
           end
 
-          SendResult.enum[:Success]
+          SendResult.enum["Success"]
 
         end
 
@@ -135,11 +135,11 @@ module SocketLabs
         # @return [Boolean]
         def has_valid_reply_to(message)
 
-          if message.reply_to_email_address.nil?
-            false
+          unless message.reply_to_email_address.nil?
+            message.reply_to_email_address.is_valid
           end
 
-          message.reply_to_email_address.is_valid
+          false
 
         end
 
@@ -155,17 +155,17 @@ module SocketLabs
 
           rec_count = get_full_recipient_count(message)
           if rec_count <= 0
-            SendResponse.new(result=SendResult.enum[:RecipientValidationNoneInMessage])
+            SendResponse.new(result=SendResult.enum["RecipientValidationNoneInMessage"])
           end
           if rec_count > maximum_recipients_per_message
-            SendResponse.new(result=SendResult.enum[:RecipientValidationMaxExceeded])
+            SendResponse.new(result=SendResult.enum["RecipientValidationMaxExceeded"])
           end
           invalid_rec = has_invalid_email_addresses(message)
           unless invalid_rec.nil? || invalid_rec.empty?
-            SendResponse.new(result=SendResult.enum[:RecipientValidationInvalidRecipients], address_results=invalid_rec)
+            SendResponse.new(result=SendResult.enum["RecipientValidationInvalidRecipients"], address_results=invalid_rec)
           end
 
-          SendResponse.new(result=SendResult.enum[:Success])
+          SendResponse.new(result=SendResult.enum["Success"])
 
         end
 
@@ -180,17 +180,17 @@ module SocketLabs
         def validate_recipients(message)
 
           if message.to_recipient.nil? || message.to_recipient.empty?
-            SendResponse.new(result=SendResult.enum[:RecipientValidationMissingTo])
+            SendResponse.new(result=SendResult.enum["RecipientValidationMissingTo"])
           end
           if message.to_recipient.length > maximum_recipients_per_message
-            SendResponse.new(result=SendResult.enum[:RecipientValidationMaxExceeded])
+            SendResponse.new(result=SendResult.enum["RecipientValidationMaxExceeded"])
           end
           invalid_rec = has_invalid_recipients(message)
           unless invalid_rec.nil? || invalid_rec.empty?
-            SendResponse.new(result=SendResult.enum[:RecipientValidationInvalidRecipients], address_results=invalid_rec)
+            SendResponse.new(result=SendResult.enum["RecipientValidationInvalidRecipients"], address_results=invalid_rec)
           end
 
-          SendResponse.new(result=SendResult.enum[:Success])
+          SendResponse.new(result=SendResult.enum["Success"])
         end
 
         # Check all 3 EmailAddress lists To, Cc, and Bcc for valid email addresses
@@ -356,7 +356,7 @@ module SocketLabs
         def validate_basic_message(message)
 
           valid_base = validate_base_message(message)
-          if valid_base == SendResult.enum[:Success]
+          if valid_base == SendResult.enum["Success"]
             result = validate_email_addresses(message)
           else
             result = SendResponse.new(result=valid_base)
@@ -371,7 +371,7 @@ module SocketLabs
         def validate_bulk_message(message)
 
           valid_base = validate_base_message(message)
-          if valid_base == SendResult.enum[:Success]
+          if valid_base == SendResult.enum["Success"]
             result = validate_recipients(message)
           else
             result = SendResponse.new(result=valid_base)

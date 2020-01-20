@@ -48,6 +48,8 @@ module SocketLabs
             request = generate_bulk_message_request(message)
           end
 
+          request
+
         end
 
         private
@@ -162,9 +164,7 @@ module SocketLabs
         # @return [Array] of AddressJson - the converted list of AddressJson
         def populate_email_list(addresses)
 
-          address_list = message.bcc_email_address
-
-          if address_list.nil? || address_list.empty?
+          if addresses.nil? || addresses.empty?
             nil
           end
 

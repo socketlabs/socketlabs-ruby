@@ -191,23 +191,17 @@ class BasicSendComplex
     message = get_message
     puts message
 
-    validator = SendValidator.new
-    result = validator.validate_message(message)
-    puts result
+    server_id = ENV['SOCKETLABS_SERVER_ID']
+    api_key = ENV['SOCKETLABS_INJECTION_API_KEY']
 
-    factory = InjectionRequestFactory.new(10000, "abcdefgxyz")
-    factory.generate_request(message)
-    json = factory.generate_request(message)
-    puts json
-    puts json.to_json
+    client = SocketLabsClient.new(server_id, api_key)
+    response = client.send(message)
 
-    SocketLabsClient.new(10000, "abcdefgxyz")
+    puts response.to_json
 
     # with proxy
     # SocketLabsClient.new(10000, "abcdefgxyz", Proxy.new("", 0000))
 
-    # json = message.as_json
-    # puts JSON.pretty_generate(json)
 
   end
 

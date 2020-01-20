@@ -88,6 +88,10 @@ module SocketLabs
                 json
               end
 
+              def empty
+                @global_merge_data.length <= 0 &&  @per_message_merge_data.length <= 0
+              end
+
             end
 
           end

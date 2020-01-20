@@ -66,7 +66,7 @@ module SocketLabs
       def send_basic_message(message)
 
         resp = validate_message(message)
-        if resp.result != SendResult.enum[:Success]
+        if resp.result != SendResult.enum["Success"]
           resp
         end
 
@@ -74,7 +74,8 @@ module SocketLabs
         request = req_factory.generate_request(message)
 
         # debug
-        debug_json = request.to_hash.to_json
+        request_hash = request.to_hash
+        debug_json = request_hash.to_json
         puts debug_json
 
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy })
@@ -88,7 +89,7 @@ module SocketLabs
       def send_bulk_message(message)
 
         resp = validate_message(message)
-        if resp.result != SendResult.enum[:Success]
+        if resp.result != SendResult.enum["Success"]
           resp
         end
 
@@ -96,7 +97,8 @@ module SocketLabs
         request = req_factory.generate_request(message)
 
         # debug
-        debug_json = request.to_hash.to_json
+        request_hash = request.to_hash
+        debug_json = request_hash.to_json
         puts debug_json
 
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy })
@@ -110,7 +112,7 @@ module SocketLabs
       def validate_message(message)
         validator = SendValidator.new
         resp = validator.validate_credentials(@server_id, @api_key)
-        if resp.result != SendResult.enum[:Success]
+        if resp.result != SendResult.enum["Success"]
           resp
         end
         validator.validate_message(message)

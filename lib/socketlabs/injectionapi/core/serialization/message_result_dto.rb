@@ -28,13 +28,16 @@ module SocketLabs
           # @param [Array] value
           def address_results=(value) 
             @address_results = Array.new
-                        
-            unless value.nil? || value.empty?
+
+            unless value.nil?
+
+              if value.instance_of? Array
                 value.each do |v1|                  
                   if v1.instance_of? AddressResult
                     @address_results.push(v1)
                   end
                 end
+              end
 
             end
           end
