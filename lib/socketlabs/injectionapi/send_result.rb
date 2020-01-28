@@ -158,9 +158,9 @@ module SocketLabs
           },
 
         # An invalid From address was found on the message
-        "InvalidFrom" =>
+        "InvalidFromAddress" =>
           {
-            :name =>"InvalidFrom",
+            :name =>"InvalidFromAddress",
             :value =>19,
             :message =>"An invalid From address was found on the message"
           },

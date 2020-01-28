@@ -68,7 +68,12 @@ module SocketLabs
                 end
 
                 if item.key?(:AddressResults)
-                  message_dto.address_results = item[:AddressResults]
+                  address_results = item[:AddressResults]
+                  unless address_results.nil?
+                    address_results.each do |aitem|
+                      message_dto.address_results.push(SocketLabs::InjectionApi::AddressResult.new(aitem[:EmailAddress], aitem[:Accepted], aitem[:ErrorCode]))
+                    end
+                  end
                 end
 
                 if item.key?(:ErrorCode)

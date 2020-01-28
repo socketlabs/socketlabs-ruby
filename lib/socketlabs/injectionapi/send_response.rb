@@ -30,7 +30,9 @@ module SocketLabs
 
       # A message detailing why the SocketLabsClient send request failed.
       def response_message
-        @result[:message]
+        unless @result.nil?
+          @result[:message]
+        end
       end
 
       # Represents the SendResponse as a str.
@@ -47,7 +49,9 @@ module SocketLabs
         }
         if @address_results.length > 0
           e = Array.new
-          @address_results.each{ |x| e >> x.to_json}
+          @address_results.each do |value|
+            e.push(value.to_json)
+          end
           json[:messageResults] = e
         end
         json.to_json

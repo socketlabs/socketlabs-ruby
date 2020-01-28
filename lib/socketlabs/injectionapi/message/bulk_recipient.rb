@@ -66,7 +66,7 @@ module SocketLabs
         # Determines if the BulkRecipient is valid. Does simple syntax validation on the email address.
         # @return [Boolean]
         def is_valid
-          StringExtension.is_valid_email_address(@email_address)
+          StringExtension.new.is_valid_email_address(@email_address)
         end
 
         # Represents the BulkRecipient as a string

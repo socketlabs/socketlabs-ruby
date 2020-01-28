@@ -6,7 +6,6 @@ class BulkSend
   include SocketLabs::InjectionApi::Core
   include SocketLabs::InjectionApi::Message
 
-  private
   def get_message
 
     message = BulkMessage.new
@@ -30,22 +29,4 @@ class BulkSend
 
   end
 
-  public
-  def execute
-
-    message = get_message
-    puts message
-
-    server_id = ENV['SOCKETLABS_SERVER_ID']
-    api_key = ENV['SOCKETLABS_INJECTION_API_KEY']
-
-    client = SocketLabsClient.new(server_id, api_key)
-    response = client.send(message)
-
-    puts response.to_json
-
-  end
-
 end
-
-res = BulkSend.new.execute

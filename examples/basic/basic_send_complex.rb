@@ -6,7 +6,6 @@ class BasicSendComplex
   include SocketLabs::InjectionApi::Core
   include SocketLabs::InjectionApi::Message
 
-  private
   def get_message
 
     message = BasicMessage.new
@@ -15,9 +14,9 @@ class BasicSendComplex
     message.html_body = "<html><body><h1>Sending A Complex Test Message</h1><p>This is the Html Body of my message.</p><h2>UTF16 Characters:</h2><p>例 (example)</p><h2>Embedded Image:</h2><p><img src=\"cid:bus\" /></p></body></html>"
     message.plain_text_body = "This is the Plain Text Body of my message."
 
-    message.message_id = "ComplexExample";
-    message.mailing_id = "BasicSend";
-    message.charset = "UTF16";
+    message.message_id = "ComplexExample"
+    message.mailing_id = "BasicSend"
+    message.charset = "UTF16"
 
     message.from_email_address = EmailAddress.new("from@example.com")
     message.reply_to_email_address = EmailAddress.new("replyto@example.com")
@@ -184,26 +183,4 @@ class BasicSendComplex
     message
   end
 
-  public
-  def execute
-
-    message = get_message
-    puts message
-
-    server_id = ENV['SOCKETLABS_SERVER_ID']
-    api_key = ENV['SOCKETLABS_INJECTION_API_KEY']
-
-    client = SocketLabsClient.new(server_id, api_key)
-    response = client.send(message)
-
-    puts response.to_json
-
-    # with proxy
-    # SocketLabsClient.new(10000, "abcdefgxyz", Proxy.new("", 0000))
-
-
-  end
-
 end
-
-res = BasicSendComplex.new.execute

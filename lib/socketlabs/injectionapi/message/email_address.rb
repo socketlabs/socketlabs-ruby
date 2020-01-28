@@ -31,7 +31,7 @@ module SocketLabs
         # Determines if the EmailAddress is valid. Does simple syntax validation on the email address.
         # @return [Boolean]
         def is_valid
-          StringExtension.is_valid_email_address(@email_address)
+          StringExtension.new.is_valid_email_address(@email_address)
         end
 
         # Represents the EmailAddress as a string

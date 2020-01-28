@@ -6,7 +6,6 @@ class BulkSendComplex
   include SocketLabs::InjectionApi::Core
   include SocketLabs::InjectionApi::Message
 
-  private
   def get_message
 
     message = BulkMessage.new
@@ -93,21 +92,18 @@ class BulkSendComplex
 
     # Add recipients with merge data directly to the Array using a Hash
     message.to_recipient.push({
-                                  :email_address => "recipient3@example.com",
-                                  :friendly_name => "Recipient 3",
-                                  :merge_data => [
-                                      { :key => "Birthday", :value => "10/30/1978" },
-                                      { :key => "UpSell", :value => "" },
-                                      { :key => "Age", :value => "40" }
-                                  ]
-                              })
+                            :email_address => "recipient3@example.com",
+                            :friendly_name => "Recipient 3",
+                            :merge_data => [
+                                { :key => "Birthday", :value => "10/30/1978" },
+                                { :key => "UpSell", :value => "" },
+                                { :key => "Age", :value => "40" }
+                            ]
+                        })
 
     # Add recipients using the addToRecipient function
     # The merge data for this Recipient will be populated with Global merge data
     message.add_to_recipient("recipient4@example.com", "Recipient #4")
-
-    message.add_to_recipient("david.schrenker@socketlabs.com")
-    message.add_to_recipient("dschrenker@gmail.com")
 
     # Adding Custom Headers
     # --------
@@ -166,22 +162,4 @@ class BulkSendComplex
 
   end
 
-  public
-  def execute
-
-    message = get_message
-    puts message
-
-    server_id = ENV['SOCKETLABS_SERVER_ID']
-    api_key = ENV['SOCKETLABS_INJECTION_API_KEY']
-
-    client = SocketLabsClient.new(server_id, api_key)
-    response = client.send(message)
-
-    puts response.to_json
-
-  end
-
 end
-
-res = BulkSendComplex.new.execute
