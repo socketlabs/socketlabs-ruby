@@ -22,8 +22,6 @@ class BasicSend
     message.add_to_email_address(EmailAddress.new("recipient3@example.com"))
     message.add_to_email_address(EmailAddress.new("recipient4@example.com", "Recipient #4"))
 
-    message.add_to_email_address("sl@gekodesign.net")
-
     message
   end
 

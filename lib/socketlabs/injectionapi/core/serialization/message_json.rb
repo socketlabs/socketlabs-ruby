@@ -174,7 +174,7 @@ module SocketLabs
               json[:textBody] = @plain_text_body
             end
 
-            unless @api_template.nil? || @api_template.empty?
+            unless @api_template.nil?
               json[:apiTemplate] = @api_template
             end
 

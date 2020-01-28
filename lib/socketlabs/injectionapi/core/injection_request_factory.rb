@@ -69,7 +69,7 @@ module SocketLabs
           message_json.custom_headers = populate_custom_headers(message.custom_headers)
           message_json.attachments = populate_attachments(message.attachments)
 
-          unless message_json.api_template.nil?
+          unless message.api_template.nil?
               message_json.api_template = message.api_template
           end
           unless message.reply_to_email_address.nil?

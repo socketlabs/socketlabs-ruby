@@ -16,9 +16,7 @@ class BasicSendWithProxy
     message.plain_text_body = "This is the Plain Text Body of my message."
 
     message.from_email_address = EmailAddress.new("from@example.com")
-
     message.add_to_email_address("recipient@example.com")
-    message.add_to_email_address("sl@gekodesign.net")
 
     message
   end

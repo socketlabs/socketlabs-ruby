@@ -137,7 +137,6 @@ class BasicSendComplex
 
     message.custom_headers = headers
 
-
     # Add CustomHeader directly to the list
     message.custom_headers.push(CustomHeader.new("message-has-attachments", "true"))
 

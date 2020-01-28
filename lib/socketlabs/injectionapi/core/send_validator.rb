@@ -114,7 +114,7 @@ module SocketLabs
         # @param [MessageBase] message
         # @return [Boolean]
         def has_api_template(message)
-          !(message.api_template.nil? || message.api_template.empty?)
+          !(message.api_template.nil?)
         end
 
         # Check if the message has a valid From Email Address

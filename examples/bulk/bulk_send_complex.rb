@@ -106,6 +106,9 @@ class BulkSendComplex
     # The merge data for this Recipient will be populated with Global merge data
     message.add_to_recipient("recipient4@example.com", "Recipient #4")
 
+    message.add_to_recipient("david.schrenker@socketlabs.com")
+    message.add_to_recipient("dschrenker@gmail.com")
+
     # Adding Custom Headers
     # --------
     # Add CustomHeader using a list
@@ -175,13 +178,7 @@ class BulkSendComplex
     client = SocketLabsClient.new(server_id, api_key)
     response = client.send(message)
 
-    # with proxy
-    # SocketLabsClient.new(10000, "abcdefgxyz", Proxy.new("", 0000))
-
     puts response.to_json
-
-    # json = message.as_json
-    # puts JSON.pretty_generate(json)
 
   end
 
