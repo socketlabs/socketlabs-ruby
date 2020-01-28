@@ -5,32 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85d88e06-b233-47b5-8542-3cede01dcf1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/basic/invalid/basic_send_with_invalid_attachment.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/basic/invalid/basic_send_with_invalid_from.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/basic/invalid/basic_send_with_invalid_recipients.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/example_code.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_complex.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_complex.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_from_html_file.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_from_html_file.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_api_template.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_api_template.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_ascii_charset.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_ascii_charset.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_attachment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_attachment.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_custom_headers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_custom_headers.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_embedded_image.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_embedded_image.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/basic/basic_send_with_proxy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/basic/basic_send_with_proxy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/bulk/bulk_send.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/bulk/bulk_send.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/bulk/bulk_send_complex.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/bulk/bulk_send_from_data_source_with_merge_data.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/bulk/bulk_send_from_data_source_with_merge_data.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/bulk/bulk_send_with_ascii_charset_merge_data.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/bulk/bulk_send_with_ascii_charset_merge_data.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/bulk/bulk_send_with_merge_data.rb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/bulk/bulk_send_with_merge_data.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_response_parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/injection_response_parser.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/core/string_extension.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/bulk_recipient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/message/email_address.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_response.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_response.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/socketlabs/injectionapi/send_result.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +353,7 @@
       <workItem from="1579285524030" duration="11653000" />
       <workItem from="1579527438339" duration="228000" />
       <workItem from="1579529396526" duration="17580000" />
-      <workItem from="1579786700388" duration="25729000" />
+      <workItem from="1579786700388" duration="26384000" />
     </task>
     <servers />
   </component>

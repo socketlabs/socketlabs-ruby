@@ -74,7 +74,7 @@ message.from_email_address = EmailAddress.new("from@example.com")
 message.to_email_address.push("recipient1@example.com")
 message.to_email_address.push(EmailAddress.new("recipient2@example.com", "Recipient #2"))
 
-# Adding CC Recipients
+# // Adding CC Recipients
 message.add_cc_email_address("recipient3@example.com")
 message.add_cc_email_address("recipient4@example.com", "Recipient #4")
 
@@ -110,7 +110,7 @@ message.html_body = "<html>This is the HtmlBody of my message sent to %%Name%%</
 
 message.from_email_address = EmailAddress.new("from@example.com")
 
-message.add_global_merge_data("Name", "{ name unknown }")
+    message.add_global_merge_data("HairColor", "{ not set }")
 
 recipient1 = BulkRecipient.new("recipient1@example.com")
 recipient1.add_merge_data("Name", "Recipient1")
@@ -141,60 +141,63 @@ created in the [SocketLabs Email Designer](https://www.socketlabs.com/blog/intro
 attachments, sending content that is stored in an HTML file, advanced bulk 
 merging, and even pulling recipients from a datasource.
 
-### [Basic send example](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send.py)
+### [Basic send example](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send.py)
 This example demonstrates a Basic Send.
 
-### [Basic send complex example](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_complex.py)
+### [Basic send async example](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_async.py)
+Basic send async example
+
+### [Basic send complex example](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_complex.py)
 This example demonstrates many features of the Basic Send, including adding multiple recipients, adding message and mailing id's, and adding an embedded image.
 
-### [Basic send from HTML file](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_from_html_file.py)
+### [Basic send from HTML file](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_from_html_file.py)
 This example demonstrates how to read in your HTML content from an HTML file 
 rather than passing in a string directly.
 
-### [Basic send from SocketLabs Template](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_api_template.py)
+### [Basic send from SocketLabs Template](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_api_template.py)
 This example demonstrates the sending of a piece of content that was created in the 
 SocketLabs Email Designer. This is also known as the [API Templates](https://www.socketlabs.com/blog/introducing-api-templates/) feature.
 
-### [Basic send with specified character set](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_ascii_charset.py)
+### [Basic send with specified character set](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_ascii_charset.py)
 This example demonstrates sending with a specific character set.
 
-### [Basic send with file attachment](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_attachment.py)
+### [Basic send with file attachment](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_attachment.py)
 This example demonstrates how to add a file attachment to your message.
 
-### [Basic send with custom email headers](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_custom_headers.py)
+### [Basic send with custom email headers](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_custom_headers.py)
 This example demonstrates how to add custom headers to your email message.
 
-### [Basic send with embedded image](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_embedded_image.py)
+### [Basic send with embedded image](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_embedded_image.py)
 This example demonstrates how to embed an image in your message.
 
-### [Basic send with a web proxy](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/basic_send_with_proxy.py)
+### [Basic send with a web proxy](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/basic_send_with_proxy.py)
 This example demonstrates how to use a proxy with your HTTP client.
 
-### [Basic send with invalid file attachment](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/invalid/basic_send_with_invalid_attachment.py)
+### [Basic send with invalid file attachment](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/invalid/basic_send_with_invalid_attachment.py)
 This example demonstrates the results of attempting to do a send with an invalid attachment.
 
-### [Basic send with invalid from address](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/invalid/basic_send_with_invalid_from.py)
+### [Basic send with invalid from address](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/invalid/basic_send_with_invalid_from.py)
 This example demonstrates the results of attempting to do a send with an invalid from address.
 
-### [Basic send with invalid recipients](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/basic/invalid/basic_send_with_invalid_recipients.py)
+### [Basic send with invalid recipients](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/basic/invalid/basic_send_with_invalid_recipients.py)
 This example demonstrates the results of attempting to do a send with invalid recipients.
 
-### [Bulk send with multiple recipients](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/bulk/bulk_send.py)
+### [Bulk send with multiple recipients](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/bulk/bulk_send.py)
 This example demonstrates how to send a bulk message to multiple recipients.
 
-### [Bulk send with merge data](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/bulk/bulk_send_from_data_source_with_merge_data.py)
+### [Bulk send with merge data](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/bulk/bulk_send_from_data_source_with_merge.py)
 This example demonstrates how to send a bulk message to multiple recipients with 
 unique merge data per recipient.
 
-### [Bulk send with complex merge including attachments](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/bulk/bulk_send_complex.py)
+### [Bulk send with complex merge including attachments](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/bulk/bulk_send_complex.py)
 This example demonstrates many features of the `BulkMessage()`, including 
 adding multiple recipients, merge data, and adding an attachment.
 
-### [Bulk send with recipients pulled from a datasource](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/bulk/bulk_send_from_data_source_with_merge_data.py)
+### [Bulk send with recipients pulled from a datasource](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/bulk/bulk_send_with_ascii_charset_merge_data.py)
 This example uses a mock repository class to demonstrate how you would pull 
 your recipients from a database and create a bulk mailing with merge data.
 
-### [Bulk send with Ascii charset and special characters](https://github.com/socketlabs/socketlabs-ruby/tree/master/examples/bulk/bulk_send_with_ascii_charset_merge_data.py)
+### [Bulk send with Ascii charset and special characters](https://github.com/socketlabs/socketlabs-python/blob/master/python-examples/bulk/bulk_send_with_ascii_charset_merge_data.py)
 This example demonstrates how to send a bulk message with a specified character 
 set and special characters.
 
