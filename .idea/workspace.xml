@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="85d88e06-b233-47b5-8542-3cede01dcf1c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@test.rcov" NAME="basic_send_complex Coverage Results" MODIFIED="1579119951554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_complex.rcov" NAME="bulk_send_complex Coverage Results" MODIFIED="1579527705705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="socketlabs-ruby" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Module Template" />
+        <option value="Ruby Class Template" />
+        <option value="Ruby File" />
+        <option value="Ruby Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Wf8exPEJ9I7WRFA1Z68UdLNPKa" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Ruby</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>RubyDeadCode</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\socketlabs-ruby\examples\bulk" />
+      <recent name="C:\Projects\socketlabs-ruby\examples" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi\message" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\socketlabs-ruby\examples\basic" />
+      <recent name="C:\Projects\socketlabs-ruby\lib" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi" />
+      <recent name="C:\Projects\socketlabs-ruby" />
+      <recent name="C:\Projects\socketlabs-ruby\socketlabs\injectionapi\message" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="a">
+      <command value="gem install bundler" />
+      <command value="bundle Install" />
+      <command value="gem install ruby_http_client" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Ruby.example_code">
+    <configuration name="basic_send" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_complex" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="ruby-2.2.6-p396" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_complex.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_from_html_file" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_from_html_file.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_api_template" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_api_template.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_ascii_charset" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_ascii_charset.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_attachment" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_attachment.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_custom_headers" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_custom_headers.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_embedded_image" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_embedded_image.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="basic_send_with_proxy" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/basic" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/basic/basic_send_with_proxy.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bulk_send" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bulk_send_complex" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send_complex.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bulk_send_from_data_source_with_merge_data" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send_from_data_source_with_merge_data.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bulk_send_with_ascii_charset_merge_data" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send_with_ascii_charset_merge_data.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bulk_send_with_merge_data" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/bulk/bulk_send_with_merge_data.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="example_code" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="socketlabs-ruby" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/examples/bulk/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/examples/example_code.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Ruby.basic_send" />
+      <item itemvalue="Ruby.basic_send_complex" />
+      <item itemvalue="Ruby.basic_send_from_html_file" />
+      <item itemvalue="Ruby.basic_send_with_api_template" />
+      <item itemvalue="Ruby.basic_send_with_ascii_charset" />
+      <item itemvalue="Ruby.basic_send_with_attachment" />
+      <item itemvalue="Ruby.basic_send_with_custom_headers" />
+      <item itemvalue="Ruby.basic_send_with_embedded_image" />
+      <item itemvalue="Ruby.basic_send_with_proxy" />
+      <item itemvalue="Ruby.bulk_send" />
+      <item itemvalue="Ruby.bulk_send_complex" />
+      <item itemvalue="Ruby.bulk_send_from_data_source_with_merge_data" />
+      <item itemvalue="Ruby.bulk_send_with_ascii_charset_merge_data" />
+      <item itemvalue="Ruby.bulk_send_with_merge_data" />
+      <item itemvalue="Ruby.example_code" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="false" RAILS_SPRING_PRE_LOADER_OPTION="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="85d88e06-b233-47b5-8542-3cede01dcf1c" name="Default Changelist" comment="" />
+      <created>1542655219702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542655219702</updated>
+      <workItem from="1542655222310" duration="2395000" />
+      <workItem from="1542722401180" duration="4463000" />
+      <workItem from="1542728668440" duration="1492000" />
+      <workItem from="1543247220874" duration="99000" />
+      <workItem from="1543248671163" duration="161000" />
+      <workItem from="1543248868852" duration="779000" />
+      <workItem from="1543260358909" duration="434000" />
+      <workItem from="1543260814560" duration="358000" />
+      <workItem from="1543261194383" duration="13477000" />
+      <workItem from="1543338710473" duration="1391000" />
+      <workItem from="1543432311090" duration="598000" />
+      <workItem from="1561659329172" duration="107000" />
+      <workItem from="1577987118187" duration="1631000" />
+      <workItem from="1577995758496" duration="15836000" />
+      <workItem from="1578319256496" duration="906000" />
+      <workItem from="1578424576814" duration="24144000" />
+      <workItem from="1578583612651" duration="21557000" />
+      <workItem from="1579285524030" duration="11653000" />
+      <workItem from="1579527438339" duration="228000" />
+      <workItem from="1579529396526" duration="17580000" />
+      <workItem from="1579786700388" duration="35630000" />
+      <workItem from="1580318657330" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580304775116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580304775116" />
+    <state width="759" height="466" key="DebuggerActiveHint" timestamp="1580218533395">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="759" height="466" key="DebuggerActiveHint/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580218533395" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1580317883075">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580317883075" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1580318629480">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629480" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1580318629480">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629480" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1580318629480">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629480" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1580318629480">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629480" />
+    <state width="1877" height="302" key="GridCell.Tab.1.bottom" timestamp="1580318629476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="302" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629476" />
+    <state width="1877" height="302" key="GridCell.Tab.1.center" timestamp="1580318629476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="302" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629476" />
+    <state width="1877" height="302" key="GridCell.Tab.1.left" timestamp="1580318629476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="302" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629476" />
+    <state width="1877" height="302" key="GridCell.Tab.1.right" timestamp="1580318629476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="302" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580318629476" />
+    <state x="463" y="166" key="SettingsEditor" timestamp="1580240481213">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="463" y="166" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580240481213" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1579787105326">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1579787105326" />
+    <state x="-1599" y="0" width="1615" height="720" key="dock-window-1" timestamp="1580240990139">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1599" y="0" width="1615" height="720" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580240990139" />
+    <state x="667" y="276" width="586" height="488" key="find.popup" timestamp="1580317019024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1580317019024" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="RubyRunConfigurationType">
+        <watch expression="@body" />
+        <watch expression="value" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_from_html_file.rcov" NAME="basic_send_from_html_file Coverage Results" MODIFIED="1579791581439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_embedded_image.rcov" NAME="basic_send_with_embedded_image Coverage Results" MODIFIED="1579790668047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send.rcov" NAME="basic_send Coverage Results" MODIFIED="1579800210587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_complex.rcov" NAME="bulk_send_complex Coverage Results" MODIFIED="1579800706226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_proxy.rcov" NAME="basic_send_with_proxy Coverage Results" MODIFIED="1579800569525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send.rcov" NAME="bulk_send Coverage Results" MODIFIED="1580217378528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_ascii_charset.rcov" NAME="basic_send_with_ascii_charset Coverage Results" MODIFIED="1580218384809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@example_code.rcov" NAME="example_code Coverage Results" MODIFIED="1580247020470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_with_ascii_charset_merge_data.rcov" NAME="bulk_send_with_ascii_charset_merge_data Coverage Results" MODIFIED="1580218733739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_custom_headers.rcov" NAME="basic_send_with_custom_headers Coverage Results" MODIFIED="1579790723504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_api_template.rcov" NAME="basic_send_with_api_template Coverage Results" MODIFIED="1579790803165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_with_attachment.rcov" NAME="basic_send_with_attachment Coverage Results" MODIFIED="1579790742609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_with_merge_data.rcov" NAME="bulk_send_with_merge_data Coverage Results" MODIFIED="1580218838740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@basic_send_complex.rcov" NAME="basic_send_complex Coverage Results" MODIFIED="1579791684895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/basic" MODULE_NAME="socketlabs-ruby" />
+    <SUITE FILE_PATH="coverage/socketlabs_ruby@bulk_send_from_data_source_with_merge_data.rcov" NAME="bulk_send_from_data_source_with_merge_data Coverage Results" MODIFIED="1580218138668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/bulk/" MODULE_NAME="socketlabs-ruby" />
+  </component>
+</project>

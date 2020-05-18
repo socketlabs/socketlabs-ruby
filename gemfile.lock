@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    socketlabs-injectionapi (1.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  socketlabs-injectionapi!
+
+BUNDLED WITH
+   2.1.4
