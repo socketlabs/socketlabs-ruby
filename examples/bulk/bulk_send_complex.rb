@@ -45,6 +45,38 @@ class BulkSendComplex
         "           Our company motto is '%%Motto%%'." +
         "           Your birthday is %%Birthday%% and you are %%Age%% years old."
 
+    message.amp_body = "<!doctype html>" +
+                 "<html amp4email>" +
+                 "<head>" +
+                 "<title>Sending an AMP Test Message</title>" +
+                 "  <meta charset=\"utf-8\">"+
+                 "  <script async src=\"https://cdn.ampproject.org/v0.js\"></script>" +
+                 "  <style amp4email-boilerplate>body{visibility:hidden}</style>" +
+                 "  <style amp-custom>" +
+                 "    h1 {" +
+                 "      margin: 1rem;" +
+                 "    }" +
+                 "  </style>" +
+                 "</head>" +
+                 "<body>" +
+                 "       <h1>Sending An AMP Complex Test Message</h1>" +
+                 "       <h2>Merge Data</h2>" +
+                 "       <p>" +
+                 "           Motto = <b>%%Motto%%</b> </br>" +
+                 "           Birthday = <b>%%Birthday%%</b> </br>" +
+                 "           Age = <b>%%Age%%</b> </br>" +
+                 "           UpSell = <b>%%UpSell%%</b>" +
+                 "       </p>" +
+                 "       <h2>Example of Merge Usage</h2>" +
+                 "       <p>" +
+                 "           Our company motto is '<b>%%Motto%%</b>'. </br>" +
+                 "           Your birthday is <b>%%Birthday%%</b> and you are <b>%%Age%%</b> years old." +
+                 "       </p>" +
+                 "       <h2>UTF-8 Characters:</h2>" +
+                 "       <p>✔ - Check</p>" +
+                 "       </body>" +
+                 "       </html>"
+
     message.message_id = "ComplexExample"
     message.mailing_id = "BulkSend"
     message.charset = "UTF-8"

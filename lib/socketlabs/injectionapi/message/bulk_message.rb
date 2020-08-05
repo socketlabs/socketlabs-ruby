@@ -46,6 +46,7 @@ module SocketLabs
             subject: @subject,
             textBody: @plain_text_body,
             htmlBody: @html_body,
+            amp_Body: @amp_body,
             apiTemplate: @api_template,
             mailingId: @mailing_id,
             messageId: @message_id,

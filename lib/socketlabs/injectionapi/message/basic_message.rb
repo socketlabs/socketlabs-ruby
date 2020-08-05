@@ -78,6 +78,7 @@ module SocketLabs
               subject: @subject,
               textBody: @plain_text_body,
               htmlBody: @html_body,
+              ampBody: @amp_body,
               apiTemplate: @api_template,
               mailingId: @mailing_id,
               messageId: @message_id,

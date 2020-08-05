@@ -17,6 +17,8 @@ require_relative "bulk/bulk_send_complex.rb"
 require_relative "bulk/bulk_send_from_data_source_with_merge_data.rb"
 require_relative "bulk/bulk_send_with_ascii_charset_merge_data.rb"
 require_relative "bulk/bulk_send_with_merge_data.rb"
+require_relative "basic/basic_send_with_amp_body"
+require_relative 'bulk/bulk_send_with_amp_body'
 
 require "json"
 
@@ -28,7 +30,7 @@ class ExampleRunner
   def self.display_menu
     puts ""
     puts "Please select from one of the following code examples:"
-    puts "NOTE:  Please update the ExampleConfig.cs file with your credentials"
+    puts "NOTE:  Please update the your environment variables with your credentials"
     puts ""
     puts " Basic Send Examples: "
     puts "    1:  Basic Send "
@@ -39,18 +41,21 @@ class ExampleRunner
     puts "    6:  Basic Send With Custom-Headers "
     puts "    7:  Basic Send With Embedded Image "
     puts "    8:  Basic Send With Proxy "
+    puts "    9:  Basic Send Complex Example "
+    puts "   10:  Basic Send With AMP Body"
     puts ""
     puts " Validation Error Handling Examples: "
-    puts "    9:  Basic Send With Invalid Attachment"
-    puts "   10:  Basic Send With Invalid From "
-    puts "   11:  Basic Send With Invalid Recipients "
+    puts "   11:  Basic Send With Invalid Attachment"
+    puts "   12:  Basic Send With Invalid From "
+    puts "   13:  Basic Send With Invalid Recipients "
     puts ""
     puts " Bulk Send Examples: "
-    puts "   12:  Bulk Send "
-    puts "   13:  Bulk Send With MergeData "
-    puts "   14:  Bulk Send With Ascii Charset And MergeData "
-    puts "   15:  Bulk Send From DataSource With MergeData "
-    puts "   16:  Bulk Send Complex Example (Everything including the Kitchen Sink) "
+    puts "   14:  Bulk Send "
+    puts "   15:  Bulk Send With MergeData "
+    puts "   16:  Bulk Send With Ascii Charset And MergeData "
+    puts "   17:  Bulk Send From DataSource With MergeData "
+    puts "   18:  Bulk Send Complex Example (Everything including the Kitchen Sink) "
+    puts "   19:  Bulk Send With AMP Body"
     puts ""
     puts "-------------------------------------------------------------------------"
 
@@ -122,21 +127,27 @@ class ExampleRunner
         message = BasicSendWithProxy.new.get_message
         use_proxy = true
       when '9'
-        message = BasicSendWithInvalidAttachment.new.get_message
+        message = BasicSendComplex.new.get_message
       when '10'
-        message = BasicSendWithInvalidFrom.new.get_message
+        message = BasicSendWithAmpBody.new.get_message
       when '11'
-        message = BasicSendWithInvalidRecipients.new.get_message
+        message = BasicSendWithInvalidAttachment.new.get_message
       when '12'
-        message = BulkSend.new.get_message
+        message = BasicSendWithInvalidFrom.new.get_message
       when '13'
-        message = BulkSendWithMergeData.new.get_message
+        message = BasicSendWithInvalidRecipients.new.get_message
       when '14'
-        message = BulkSendWithAsciiCharsetMergeData.new.get_message
+        message = BulkSend.new.get_message
       when '15'
-        message = BulkSendFromDataSourceWithMergeData.new.get_message
+        message = BulkSendWithMergeData.new.get_message
       when '16'
+        message = BulkSendWithAsciiCharsetMergeData.new.get_message
+      when '17'
+        message = BulkSendFromDataSourceWithMergeData.new.get_message
+      when '18'
         message = BulkSendComplex.new.get_message
+      when '19'
+        message = BulkSendWithAmpBody.new.get_message
       when 'quit'
         break
       else
@@ -146,7 +157,6 @@ class ExampleRunner
       unless message.nil?
         ExampleRunner.execute(message, use_proxy)
       end
-
     end
 
   end

@@ -13,6 +13,22 @@ class BasicSendComplex
     message.subject = "Sending A Complex Test Message (Basic Send))"
     message.html_body = "<html><body><h1>Sending A Complex Test Message</h1><p>This is the Html Body of my message.</p><h2>UTF16 Characters:</h2><p>例 (example)</p><h2>Embedded Image:</h2><p><img src=\"cid:bus\" /></p></body></html>"
     message.plain_text_body = "This is the Plain Text Body of my message."
+    message.amp_body = "<!doctype html>" +
+        "<html amp4email>" +
+        "    <head>" +
+        "    <meta charset=\"utf-8\">" +
+        "     <script async src=\"https://cdn.ampproject.org/v0.js\"></script>" +
+        "    <style amp4email-boilerplate>body{visibility:hidden}</style>" +
+        "     <style amp-custom>" +
+        "         h1 {" +
+        "              margin: 1rem;" +
+        "            }" +
+        "      </style>" +
+        "   </head>" +
+        "        <body>" +
+        "         <h1>This is the AMP Html Body of my message</h1>" +
+        "        </body>" +
+        "</html>"
 
     message.message_id = "ComplexExample"
     message.mailing_id = "BasicSend"
