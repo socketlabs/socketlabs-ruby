@@ -1,10 +1,7 @@
-[![SocketLabs](https://www.socketlabs.com/assets/socketlabs-logo1.png)](https://www.socketlabs.com) 
-# [![Twitter Follow](https://img.shields.io/twitter/follow/socketlabs.svg?style=social&label=Follow)](https://twitter.com/socketlabs) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/socketlabs/socketlabs-csharp/blob/master/CONTRIBUTING.md)
-<!--
-[![GitHub contributors](https://img.shields.io/github/contributors/socketlabs/socketlabs-python.svg)](https://github.com/socketlabs/socketlabs-python/graphs/contributors)
--->
+[![SocketLabs](https://static.socketlabs.com/logos/logo-dark-326x64.png)](https://www.socketlabs.com/developers) 
+# [![Twitter Follow](https://img.shields.io/twitter/follow/socketlabs.svg?style=social&label=Follow)](https://twitter.com/socketlabs) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/socketlabs/socketlabs-nodejs/blob/master/CONTRIBUTING.md)
 
-The SocketLabs Email Delivery Ruby library allows you to easily send email messages via the [SocketLabs Injection API](https://www.socketlabs.com/api-reference/injection-api/).  The library makes it easy to build and send any type of message supported by the API, from a simple message to a single recipient all the way to a complex bulk message sent to a group of recipients with unique merge data per recipient.
+The SocketLabs Email Delivery Ruby library allows you to easily send email messages via the [SocketLabs Injection API](https://www.socketlabs.com/docs/inject/).  The library makes it easy to build and send any type of message supported by the API, from a simple message to a single recipient all the way to a complex bulk message sent to a group of recipients with unique merge data per recipient.
 
 # Table of Contents
 * [Prerequisites and Installation](#prerequisites-and-installation)
@@ -100,7 +97,7 @@ response = client.send(message)
 A bulk message usually contains a single recipient per message 
 and is generally used to send the same content to many recipients, 
 optionally customizing the message via the use of MergeData. 
-For more information about using Merge data, please see the [Injection API documentation](https://www.socketlabs.com/api-reference/injection-api/#merging).
+For more information about using Merge data, please see the [Injection API documentation](https://www.socketlabs.com/docs/inject/).
 ```ruby
 require "socketlabs-injectionapi"
 
@@ -178,6 +175,10 @@ This example demonstrates how to embed an image in your message.
 ### [Basic send with a web proxy](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_proxy.rb)
 This example demonstrates how to use a proxy with your HTTP client.
 
+### [Basic send with Amp ](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_amp_body.rb)
+This example demonstrates how to send a basic message with an AMP Html body.
+For more information about AMP please see [AMP Project](https://amp.dev/documentation/)
+
 ### [Basic send with invalid file attachment](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/invalid/basic_send_with_invalid_attachment.rb)
 This example demonstrates the results of attempting to do a send with an invalid attachment.
 
@@ -206,6 +207,14 @@ your recipients from a database and create a bulk mailing with merge data.
 This example demonstrates how to send a bulk message with a specified character 
 set and special characters.
 
+### [Bulk send with Amp ](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/bulk/bulk_send_with_amp_body.rb )
+This example demonstrates how to send a bulk message with an AMP Html body.
+For more information about AMP please see [AMP Project](https://amp.dev/documentation/)
+
+<a name="version"></a>
+# Version
+* 1.1.0 - Adds Amp Html Support
+* 1.0.0 - Initial Release
 
 <a name="license" id="license"></a>
 # License
