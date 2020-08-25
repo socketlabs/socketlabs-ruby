@@ -11,6 +11,8 @@ module SocketLabs
           attr_accessor :plain_text_body
           # the HTML portion of the message body.
           attr_accessor :html_body
+          # the AMP portion of the message body.
+          attr_accessor :amp_body
           # the api template.
           attr_accessor :api_template
           # the custom mailing id.
@@ -32,6 +34,7 @@ module SocketLabs
             @subject = nil
             @plain_text_body = nil
             @html_body = nil
+            @amp_body = nil 
             @api_template = nil
             @mailing_id = nil
             @message_id = nil
@@ -168,6 +171,10 @@ module SocketLabs
 
             unless @html_body.nil? || @html_body.empty?
               json[:htmlBody] = @html_body
+            end
+
+            unless @amp_body.nil? || @amp_body.empty?
+              json[:ampBody] = @amp_body
             end
 
             unless @plain_text_body.nil? || @plain_text_body.empty?

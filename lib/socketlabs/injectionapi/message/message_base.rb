@@ -8,10 +8,16 @@ module SocketLabs
         # the message Subject.
         attr_accessor :subject
         # the plain text portion of the message body.
+        # (Optional) Either TextBody or HtmlBody must be used with the AmpBody or use a ApiTemplate
         attr_accessor :plain_text_body
         # the HTML portion of the message body.
+        # (Optional) Either TextBody or HtmlBody must be used with the AmpBody or use a ApiTemplate
         attr_accessor :html_body
+        # the AMP portion of the message body.
+        # (Optional) Either TextBody or HtmlBody must be used with the AmpBody or use a ApiTemplate
+        attr_accessor :amp_body
         # the Api Template for the message.
+        # (Optional) Either TextBody or HtmlBody must be used with the AmpBody or use a ApiTemplate
         attr_accessor :api_template
         # the custom MailingId for the message.
         # See https://www.injectionapi.com/blog/best-practices-for-using-custom-mailingids-and-messageids/
@@ -38,6 +44,10 @@ module SocketLabs
 
             unless arguments[:html_body].nil? || arguments[:html_body].empty?
               @html_body = arguments[:html_body]
+            end
+
+            unless arguments[:amp_body].nil? || arguments[:amp_body].empty?
+              @amp_body = arguments[:amp_body]
             end
 
             unless arguments[:api_template].nil? || arguments[:api_template].empty?
