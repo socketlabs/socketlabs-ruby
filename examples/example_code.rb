@@ -81,7 +81,7 @@ class ExampleRunner
 
     # create the proxy hash. accepted values: :host, :port, :user, :pass
     if use_proxy
-      proxy = { :host =>"127.0.0.1", :port => 8888 }
+      proxy = { :host =>"127.0.0.1", :port => 4433 }
     else
       proxy = {}
     end
