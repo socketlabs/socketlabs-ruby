@@ -28,6 +28,8 @@ module SocketLabs
         attr_reader :proxy
         # The Net::HTTP used when making the HTTP request
         attr_reader :http
+        # The Timeout to use when making the HTTP request
+        attr_reader :timeout
 
         # @param [Hash] http_request_method
         # @param [Hash] arguments:
@@ -40,6 +42,7 @@ module SocketLabs
           @request_method = http_request_method
           @endpoint = "https://inject.socketlabs.com/api/v1/email"
           @proxy = Array.new
+          @timeout = 120
 
           unless arguments.nil? || arguments.empty?
 
@@ -49,6 +52,10 @@ module SocketLabs
 
             unless arguments[:proxy].nil? || arguments[:proxy].empty?
               @proxy = arguments[:proxy]
+            end
+
+            unless arguments[:timeout].nil?
+              @timeout = arguments[:timeout]
             end
 
           end
@@ -112,6 +119,8 @@ module SocketLabs
           params += @proxy.values_at(:host, :port, :user, :pass) unless @proxy.empty?
 
           @http = Net::HTTP.new(*params)
+          # add timeout
+          @http.read_timeout = @timeout
           # add ssl
           if @endpoint.start_with?('https')
             @http.use_ssl = true

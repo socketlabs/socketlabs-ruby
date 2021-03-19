@@ -87,6 +87,7 @@ class ExampleRunner
     end
 
     client = SocketLabsClient.new(server_id, api_key, proxy)
+    client.request_timeout = 10
     begin
       response = client.send(message)
       puts response.to_json

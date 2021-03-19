@@ -27,7 +27,7 @@ module SocketLabs
         @api_key = api_key
         @proxy = proxy
         @endpoint = "https://inject.socketlabs.com/api/v1/email"
-        @requestTimeout = 120
+        @request_timeout = 120
       end
 
       # Sends a Message message and returns the response from the Injection API.
@@ -63,7 +63,8 @@ module SocketLabs
       # The SocketLabs Injection API endpoint Url
       attr_accessor :endpoint
       # The SocketLabs Injection API Request Timeout
-      attr_accessor :requestTimeout
+      public
+      attr_accessor :request_timeout
 
       def http_method
         HttpRequest.http_request_method[:Post]
@@ -87,7 +88,7 @@ module SocketLabs
         debug_json = request_hash.to_json
         @request_json = debug_json
 
-        http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy })
+        http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
         response = http_request.send_request(request)
         @response_json = response.to_json
 
@@ -111,7 +112,7 @@ module SocketLabs
         debug_json = request_hash.to_json
         @request_json = debug_json
 
-        http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy })
+        http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
         response = http_request.send_request(request)
         @response_json = response.to_json
 
