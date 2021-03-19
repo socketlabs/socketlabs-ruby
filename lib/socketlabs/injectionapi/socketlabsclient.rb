@@ -62,8 +62,9 @@ module SocketLabs
       attr_accessor :proxy
       # The SocketLabs Injection API endpoint Url
       attr_accessor :endpoint
-      # The SocketLabs Injection API Request Timeout
+
       public
+      # The SocketLabs Injection API Request Timeout
       attr_accessor :request_timeout
 
       def http_method
