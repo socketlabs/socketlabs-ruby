@@ -49,6 +49,7 @@ module SocketLabs
                             response = @http_client.send_request(request)
 
                             if (@error_codes.include? response.status_code.to_i) && (attempts < @retry_settings.maximum_number_of_retries)
+                                
                                 attempts += 1
 
                             else
