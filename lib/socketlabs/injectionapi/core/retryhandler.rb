@@ -48,28 +48,26 @@ module SocketLabs
 
                             response = @http_client.send_request(request)
 
-                            if @error_codes.include? response.status_code
-                                raise Net::HttpServerError.new "HttpStatusCode: #{response.status_code}. Response contains server error."
-                            end
+                            if (@error_codes.include? response.status_code.to_i) && (attempts < @retry_settings.maximum_number_of_retries)
+                                attempts += 1
 
-                            parser = InjectionResponseParser.new
-                            parser.parse(response)
+                            else
+
+                                parser = InjectionResponseParser.new
+                                parser.parse(response)
+
+                            end
 
                         rescue Timeout::Error => exception
 
                             attempts += 1
-                            puts "Retry Attempt : " + attempts.to_s + " Timeout Exception : " + exception.to_s
+                            
                             if attempts > @retry_settings.maximum_number_of_retries
                                 raise exception
                             end
                         
-                        rescue Net::HttpServerError => exception
-
-                            attempts += 1
-                            puts "Retry Attempt : " + attempts.to_s + " Http Exception : " + exception.to_s
-                            if attempts > @retry_settings.maximum_number_of_retries
-                                raise exception
-                            end
+                        rescue Exception => exception
+                            raise exception
 
                         end
 
