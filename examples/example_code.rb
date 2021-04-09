@@ -9,6 +9,7 @@ require_relative "basic/basic_send_with_attachment.rb"
 require_relative "basic/basic_send_with_custom_headers.rb"
 require_relative "basic/basic_send_with_embedded_image.rb"
 require_relative "basic/basic_send_with_proxy.rb"
+require_relative "basic/basic_send_with_retry.rb"
 require_relative "basic/invalid/basic_send_with_invalid_attachment"
 require_relative "basic/invalid/basic_send_with_invalid_from"
 require_relative "basic/invalid/basic_send_with_invalid_recipients"
@@ -41,21 +42,22 @@ class ExampleRunner
     puts "    6:  Basic Send With Custom-Headers "
     puts "    7:  Basic Send With Embedded Image "
     puts "    8:  Basic Send With Proxy "
-    puts "    9:  Basic Send Complex Example "
-    puts "   10:  Basic Send With AMP Body"
+    puts "    9:  Basic Send With Retry "
+    puts "   10:  Basic Send Complex Example "
+    puts "   11:  Basic Send With AMP Body"
     puts ""
     puts " Validation Error Handling Examples: "
-    puts "   11:  Basic Send With Invalid Attachment"
-    puts "   12:  Basic Send With Invalid From "
-    puts "   13:  Basic Send With Invalid Recipients "
+    puts "   12:  Basic Send With Invalid Attachment"
+    puts "   13:  Basic Send With Invalid From "
+    puts "   14:  Basic Send With Invalid Recipients "
     puts ""
     puts " Bulk Send Examples: "
-    puts "   14:  Bulk Send "
-    puts "   15:  Bulk Send With MergeData "
-    puts "   16:  Bulk Send With Ascii Charset And MergeData "
-    puts "   17:  Bulk Send From DataSource With MergeData "
-    puts "   18:  Bulk Send Complex Example (Everything including the Kitchen Sink) "
-    puts "   19:  Bulk Send With AMP Body"
+    puts "   15:  Bulk Send "
+    puts "   16:  Bulk Send With MergeData "
+    puts "   17:  Bulk Send With Ascii Charset And MergeData "
+    puts "   18:  Bulk Send From DataSource With MergeData "
+    puts "   19:  Bulk Send Complex Example (Everything including the Kitchen Sink) "
+    puts "   20:  Bulk Send With AMP Body"
     puts ""
     puts "-------------------------------------------------------------------------"
 
@@ -88,6 +90,7 @@ class ExampleRunner
 
     client = SocketLabsClient.new(server_id, api_key, proxy)
     client.request_timeout = 10
+    client.number_of_retries = 2
     begin
       response = client.send(message)
       puts response.to_json
@@ -128,26 +131,29 @@ class ExampleRunner
         message = BasicSendWithProxy.new.get_message
         use_proxy = true
       when '9'
-        message = BasicSendComplex.new.get_message
+        message = BasicSendWithRetry.new.get_message
+        use_proxy = true
       when '10'
-        message = BasicSendWithAmpBody.new.get_message
+        message = BasicSendComplex.new.get_message
       when '11'
-        message = BasicSendWithInvalidAttachment.new.get_message
+        message = BasicSendWithAmpBody.new.get_message
       when '12'
-        message = BasicSendWithInvalidFrom.new.get_message
+        message = BasicSendWithInvalidAttachment.new.get_message
       when '13'
-        message = BasicSendWithInvalidRecipients.new.get_message
+        message = BasicSendWithInvalidFrom.new.get_message
       when '14'
-        message = BulkSend.new.get_message
+        message = BasicSendWithInvalidRecipients.new.get_message
       when '15'
-        message = BulkSendWithMergeData.new.get_message
+        message = BulkSend.new.get_message
       when '16'
-        message = BulkSendWithAsciiCharsetMergeData.new.get_message
+        message = BulkSendWithMergeData.new.get_message
       when '17'
-        message = BulkSendFromDataSourceWithMergeData.new.get_message
+        message = BulkSendWithAsciiCharsetMergeData.new.get_message
       when '18'
-        message = BulkSendComplex.new.get_message
+        message = BulkSendFromDataSourceWithMergeData.new.get_message
       when '19'
+        message = BulkSendComplex.new.get_message
+      when '20'
         message = BulkSendWithAmpBody.new.get_message
       when 'quit'
         break

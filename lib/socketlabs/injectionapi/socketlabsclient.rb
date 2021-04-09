@@ -7,6 +7,8 @@ require_relative 'message/basic_message.rb'
 require_relative 'message/bulk_message.rb'
 require_relative 'core/injection_request_factory.rb'
 require_relative 'core/http_request.rb'
+require_relative 'core/retryhandler.rb'
+require_relative 'retrysettings.rb'
 
 module SocketLabs
   module InjectionApi
@@ -28,6 +30,7 @@ module SocketLabs
         @proxy = proxy
         @endpoint = "https://inject.socketlabs.com/api/v1/email"
         @request_timeout = 120
+        @number_of_retries = 0
       end
 
       # Sends a Message message and returns the response from the Injection API.
@@ -66,6 +69,7 @@ module SocketLabs
       public
       # The SocketLabs Injection API Request Timeout
       attr_accessor :request_timeout
+      attr_accessor :number_of_retries
 
       def http_method
         HttpRequest.http_request_method[:Post]
@@ -90,7 +94,8 @@ module SocketLabs
         @request_json = debug_json
 
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
-        response = http_request.send_request(request)
+        retry_handler = RetryHandler.new(http_request, @endpoint, RetrySettings.new(@number_of_retries))
+        response = retry_handler.send(request)
         @response_json = response.to_json
 
       end
@@ -114,7 +119,8 @@ module SocketLabs
         @request_json = debug_json
 
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
-        response = http_request.send_request(request)
+        retry_handler = RetryHandler.new(http_request, @endpoint, RetrySettings.new(@number_of_retries))
+        response = retry_handler.send(request)
         @response_json = response.to_json
 
       end

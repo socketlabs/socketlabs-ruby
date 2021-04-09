@@ -1,3 +1,5 @@
+require_relative '../version.rb'
+
 module SocketLabs
     module InjectionApi
         class RetrySettings
@@ -50,7 +52,7 @@ module SocketLabs
                 min = (1 * 1000 * 0.8).to_i
                 max = (1 * 1000 * 1.2).to_i
 
-                ((Math.pow(2.0, number_of_attempts) - 1.0) * random.rand(min..max)).to_i
+                (((2.0 ** number_of_attempts) - 1.0) * random.rand(min..max)).to_i
 
             end
 
