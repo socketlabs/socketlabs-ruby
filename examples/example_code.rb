@@ -63,7 +63,7 @@ class ExampleRunner
 
   end
 
-  def self.execute(message, use_proxy = false)
+  def self.execute(message, use_proxy = false, use_retry = false)
 
     # Add live emails to the test messages
     # message.from_email_address = EmailAddress.new("yourname@example.com")
@@ -89,8 +89,12 @@ class ExampleRunner
     end
 
     client = SocketLabsClient.new(server_id, api_key, proxy)
-    client.request_timeout = 10
-    client.number_of_retries = 2
+
+    # automatically retries the http request
+    if use_retry
+      client.number_of_retries = 2
+    end
+
     begin
       response = client.send(message)
       puts response.to_json
@@ -107,6 +111,7 @@ class ExampleRunner
     loop do
       message = nil
       use_proxy = false
+      use_retry = false
       puts "Enter a number (or QUIT to exit):"
 
       input = gets.chomp
@@ -132,7 +137,7 @@ class ExampleRunner
         use_proxy = true
       when '9'
         message = BasicSendWithRetry.new.get_message
-        use_proxy = true
+        use_retry = true
       when '10'
         message = BasicSendComplex.new.get_message
       when '11'
@@ -162,7 +167,7 @@ class ExampleRunner
       end
 
       unless message.nil?
-        ExampleRunner.execute(message, use_proxy)
+        ExampleRunner.execute(message, use_proxy, use_retry)
       end
     end
 
