@@ -175,6 +175,9 @@ This example demonstrates how to embed an image in your message.
 ### [Basic send with a web proxy](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_proxy.rb)
 This example demonstrates how to use a proxy with your HTTP client.
 
+### [Basic send with retry enabled](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_retry.rb)
+This example demonstrates how to use the retry logic with your HTTP client.
+
 ### [Basic send with Amp ](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_amp_body.rb)
 This example demonstrates how to send a basic message with an AMP Html body.
 For more information about AMP please see [AMP Project](https://amp.dev/documentation/)
@@ -213,6 +216,7 @@ For more information about AMP please see [AMP Project](https://amp.dev/document
 
 <a name="version"></a>
 # Version
+* 1.2.1 - Adding optional retry logic for Http requests. If configured, the request will retry when certain 500 errors occur (500, 502, 503, 504)
 * 1.1.1 - Adding request timeout value on the client for Http requests
 * 1.1.0 - Adds Amp Html Support
 * 1.0.0 - Initial Release
