@@ -96,7 +96,11 @@ module SocketLabs
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
         retry_handler = RetryHandler.new(http_request, @endpoint, RetrySettings.new(@number_of_retries))
         response = retry_handler.send(request)
-        @response_json = response.to_json
+
+        parser = InjectionResponseParser.new
+        parser.parse(response)
+
+        @response_json = parser.to_json
 
       end
 
@@ -121,7 +125,11 @@ module SocketLabs
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
         retry_handler = RetryHandler.new(http_request, @endpoint, RetrySettings.new(@number_of_retries))
         response = retry_handler.send(request)
-        @response_json = response.to_json
+
+        parser = InjectionResponseParser.new
+        parser.parse(response)
+
+        @response_json = parser.to_json
 
       end
 

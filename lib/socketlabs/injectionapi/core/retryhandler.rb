@@ -31,8 +31,7 @@ module SocketLabs
                     if @retry_settings.maximum_number_of_retries == 0
 
                         response =  @http_client.send_request(request)
-                        parser = InjectionResponseParser.new
-                        parser.parse(response)
+                        response
 
                     end
 
@@ -52,8 +51,7 @@ module SocketLabs
 
                             else
 
-                                parser = InjectionResponseParser.new
-                                parser.parse(response)
+                                response
 
                             end
 
