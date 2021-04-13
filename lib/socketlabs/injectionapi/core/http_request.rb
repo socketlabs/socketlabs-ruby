@@ -75,8 +75,7 @@ module SocketLabs
           response = @http.request(@request)
           http_response = HttpResponse.new(response)
 
-          parser = InjectionResponseParser.new
-          parser.parse(http_response)
+          http_response
 
         end
 
