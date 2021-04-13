@@ -6,7 +6,7 @@ require 'socketlabs/version.rb'
 Gem::Specification.new do |spec|
   spec.name        = 'socketlabs-injectionapi'
   spec.version     = SocketLabs::InjectionApi::VERSION
-  spec.authors     = ['David Schrenker']
+  spec.authors     = ['David Schrenker', 'Praneeth Chandra']
   spec.email       = 'developers@socketlabs.com'
   spec.summary     = 'SocketLabs Injection Api'
   spec.description = 'SocketLabs Email Delivery Ruby Client library'
