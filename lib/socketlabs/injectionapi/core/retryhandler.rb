@@ -27,39 +27,38 @@ module SocketLabs
 
                 def send(request)
 
-                    if @retry_settings.maximum_number_of_retries == 0
-                        response =  @http_client.send_request(request)
-                        response
-                    end
-
                     attempts = 0
+                    exception = nil
 
                     loop do
                         wait_interval = @retry_settings.get_next_wait_interval(attempts)
+                        attempts += 1
 
                         begin
                             response = @http_client.send_request(request)
 
-                            if (@error_codes.include? response.status_code.to_i) && (attempts < @retry_settings.maximum_number_of_retries)
-                                attempts += 1
+                            if @error_codes.include? response.status_code.to_i
+                                exception = SocketLabs::InjectionApi::Exceptions::ServerException.new("Failed to send email. Received #{response.status_code} from server.")
                             else
-                                response
+                                return response
                             end
 
                         rescue Timeout::Error => exception
-                            attempts += 1
-                            
-                            if attempts > @retry_settings.maximum_number_of_retries
-                                raise exception
-                            end
+                            exception = exception
+
+                            break if attempts > @retry_settings.maximum_number_of_retries
                             sleep(wait_interval)
                         
                         rescue Exception => exception
                             raise exception
                         end
 
+                        break if attempts > @retry_settings.maximum_number_of_retries
                     end
 
+                    raise exception if exception
+
+                    false
                 end
 
             end
