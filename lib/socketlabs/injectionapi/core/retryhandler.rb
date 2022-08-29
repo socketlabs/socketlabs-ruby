@@ -39,6 +39,7 @@ module SocketLabs
 
                             if @error_codes.include? response.status_code.to_i
                                 exception = SocketLabs::InjectionApi::Exceptions::ServerException.new("Failed to send email. Received #{response.status_code} from server.")
+                                sleep(wait_interval)
                             else
                                 return response
                             end
