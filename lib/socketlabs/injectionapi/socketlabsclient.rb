@@ -98,9 +98,9 @@ module SocketLabs
         response = retry_handler.send(request)
 
         parser = InjectionResponseParser.new
-        parser.parse(response)
+        result = parser.parse(response)
 
-        @response_json = parser.to_json
+        @response_json = result.to_json
 
       end
 
@@ -127,9 +127,9 @@ module SocketLabs
         response = retry_handler.send(request)
 
         parser = InjectionResponseParser.new
-        parser.parse(response)
+        result = parser.parse(response)
 
-        @response_json = parser.to_json
+        @response_json = result.to_json
 
       end
 
