@@ -20,11 +20,11 @@ module SocketLabs
         # (Optional) Either TextBody or HtmlBody must be used with the AmpBody or use a ApiTemplate
         attr_accessor :api_template
         # the custom MailingId for the message.
-        # See https://www.injectionapi.com/blog/best-practices-for-using-custom-mailingids-and-messageids/
+        # See https://www.socketlabs.com/blog/best-practices-for-using-custom-mailingids-and-messageids/
         # for more information.
         attr_accessor :mailing_id
         # the custom MessageId for the message.
-        # See https://www.injectionapi.com/blog/best-practices-for-using-custom-mailingids-and-messageids/
+        # See https://www.socketlabs.com/blog/best-practices-for-using-custom-mailingids-and-messageids/
         # for more information.
         attr_accessor :message_id
         # the optional character set. Default is UTF-8
