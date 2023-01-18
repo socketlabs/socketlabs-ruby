@@ -8,10 +8,11 @@ GEM
   specs:
 
 PLATFORMS
+  x64-mingw-ucrt
   x64-mingw32
 
 DEPENDENCIES
   socketlabs-injectionapi!
 
 BUNDLED WITH
-   2.1.4
+   2.3.7

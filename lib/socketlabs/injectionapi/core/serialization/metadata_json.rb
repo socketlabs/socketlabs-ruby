@@ -3,23 +3,23 @@ module SocketLabs
     module Core
       module Serialization
 
-        # Represents metadata as a name and value pair.
+        # Represents metadata as a key and value pair.
         # To be serialized into JSON string before sending to the Injection Api.
         class MetadataJson
 
-          # name of the metadata.
-          attr_accessor :name
+          # key of the metadata.
+          attr_accessor :key
           # value of the metadata.
           attr_accessor :value
 
           # Initializes a new instance of the MetadataJson class
-          # @param [String] name
+          # @param [String] key
           # @param [String] value
           def initialize(
-            name = nil,
+            key = nil,
             value = nil
           )
-            @name = name
+            @key = key
             @value = value
           end
 
@@ -27,7 +27,7 @@ module SocketLabs
           # @return [hash]
           def to_hash
             {
-              :name => @name,
+              :key => @key,
               :value => @value
             }
           end

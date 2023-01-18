@@ -71,6 +71,7 @@ module SocketLabs
           message_json.from_email_address = email_address_to_address_json(message.from_email_address)
           message_json.custom_headers = populate_custom_headers(message.custom_headers)
           message_json.metadata = populate_metadata(message.metadata)
+          message_json.tags = message.tags
           message_json.attachments = populate_attachments(message.attachments)
 
           unless message.api_template.nil?
@@ -119,9 +120,9 @@ module SocketLabs
 
           metadata.each do |header|
             if header.instance_of? Metadata
-              metadata_json.push(MetadataJson.new(header.name, header.value))
+              metadata_json.push(MetadataJson.new(header.key, header.value))
             elsif header.instance_of? Hash
-              metadata_json.push(MetadataJson.new(header[:name], header[:value]))
+              metadata_json.push(MetadataJson.new(header[:key], header[:value]))
             end
           end
 

@@ -78,6 +78,7 @@ module SocketLabs
           @attachments = Array.new
           @custom_headers = Array.new
           @metadata = Array.new
+          @tags = Array.new
 
         end
 
@@ -191,19 +192,49 @@ module SocketLabs
         end
 
         # Add a Metadata to the message.
-        # @param [String/Metadata] name
+        # @param [String/Metadata] key
         # @param [String] value
-        def add_metadata(name, value = nil)
+        def add_metadata(key, value = nil)
 
-          if name.kind_of? Metadata
-            @metadata.push(name)
+          if key.kind_of? Metadata
+            @metadata.push(key)
 
-          elsif name.kind_of? String
-            @metadata.push(Metadata.new(name, value))
+          elsif key.kind_of? String
+            @metadata.push(Metadata.new(key, value))
 
           end
 
         end
+
+        # Get the list of tags added to the message.
+        def tags
+          @tags
+        end
+
+        # Set the list of tags added to the message.
+        def tags=(value)
+          @tags = Array.new
+          unless value.nil? || value.empty?
+            value.each do |v1|
+              if v1.kind_of? String
+                @tags.push(v1)
+              else
+                raise StandardError("Invalid type for tag, type of 'String' was expected")
+              end
+            end
+          end
+        end
+
+        # Add a Tag to the message.
+        # @param [String] value
+        def add_tag(value = nil)
+
+          if value.kind_of? String
+            @tags.push(value)
+          end
+
+        end
+
 
       end
     end
