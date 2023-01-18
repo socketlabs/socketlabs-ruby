@@ -169,6 +169,9 @@ This example demonstrates how to add a file attachment to your message.
 ### [Basic send with custom email headers](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_custom_headers.rb)
 This example demonstrates how to add custom headers to your email message.
 
+### [Basic send with metadata](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_metadata.rb)
+This example demonstrates how to add metadata to your email message.
+
 ### [Basic send with embedded image](https://github.com/socketlabs/socketlabs-ruby/blob/master/examples/basic/basic_send_with_embedded_image.rb)
 This example demonstrates how to embed an image in your message.
 

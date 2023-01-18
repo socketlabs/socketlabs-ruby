@@ -44,6 +44,7 @@ module SocketLabs
             @merge_data = MergeDataJson.new
             @attachments = Array.new
             @custom_headers = Array.new
+            @metadata = Array.new
             @to_email_address = Array.new
             @cc_email_address = Array.new
             @bcc_email_address = Array.new
@@ -82,6 +83,7 @@ module SocketLabs
           def custom_headers
             @custom_headers
           end
+
           # Set the list of CustomHeaderJson.
           # @param [Array] value
           def custom_headers=(value)
@@ -100,6 +102,34 @@ module SocketLabs
           def add_custom_header(value)
             if value.instance_of? CustomHeaderJson
               @custom_headers.push(value)
+            end
+          end
+
+          #metadata
+          # Get the list of MetadataJson.
+          # @return [Array]
+          def metadata
+            @metadata
+          end
+
+          # Set the list of MetadataJson.
+          # @param [Array] value
+          def metadata=(value)
+            @metadata = Array.new
+            unless value.nil? || value.empty?
+              value.each do |v1|
+                if v1.instance_of? MetadataJson
+                  @metadata.push(v1)
+                end
+              end
+            end
+          end
+
+          # Add a MetadataJson to the metadata list
+          # @param [MetadataJson] value
+          def add_metadata(value)
+            if value.instance_of? MetadataJson
+              @metadata.push(value)
             end
           end
 
@@ -231,6 +261,14 @@ module SocketLabs
                 e.push(value.to_hash)
               end
               json[:customHeaders] = e
+            end
+
+            unless @metadata.nil? || @metadata.length == 0
+              e = Array.new
+              @metadata.each do |value|
+                e.push(value.to_hash)
+              end
+              json[:metadata] = e
             end
 
             unless @attachments.nil? || @attachments.length == 0

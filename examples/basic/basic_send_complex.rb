@@ -159,6 +159,22 @@ class BasicSendComplex
     message.add_custom_header("testMessageHeader", "I am a message header")
     message.add_custom_header(CustomHeader.new("testMessageHeader2", "I am another message header"))
 
+    # Adding Metadata
+    # --------
+    # Add Metadata using a list
+    metadata = Array.new
+    metadata.push(Metadata.new("x-mycustommetadata", "I am custom metadata"))
+    metadata.push(Metadata.new("x-internalid", "123"))
+
+    message.metadata = metadata
+
+    # Add Metadata directly to the list
+    message.metadata.push(Metadata.new("x-mycustommetadata", "I am custom metadata"))
+
+    # Add Metadata using the add_metadata function
+    message.add_metadata("x-mycustommetadata2", "Custom metadata")
+    message.add_metadata(Metadata.new("x-externalid", "456"))
+
     # Adding Attachments
     attachment1 = Attachment.new(
         name:"bus",

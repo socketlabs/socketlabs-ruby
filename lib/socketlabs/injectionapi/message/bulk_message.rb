@@ -55,6 +55,7 @@ module SocketLabs
             replyTo: @reply_to_email_address,
             attachments: @attachments,
             customHeaders: @custom_headers,
+            metadata: @metadata,
             to: @to_recipient,
             global_merge_data: @global_merge_data
           }
