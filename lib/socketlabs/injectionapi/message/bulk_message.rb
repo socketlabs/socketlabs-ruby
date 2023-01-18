@@ -56,6 +56,7 @@ module SocketLabs
             attachments: @attachments,
             customHeaders: @custom_headers,
             metadata: @metadata,
+            tags: @tags,
             to: @to_recipient,
             global_merge_data: @global_merge_data
           }

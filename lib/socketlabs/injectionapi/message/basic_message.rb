@@ -12,6 +12,7 @@ module SocketLabs
           @to_email_address = Array.new
           @cc_email_address = Array.new
           @bcc_email_address = Array.new
+          @tags = Array.new
 
         end
 
@@ -88,6 +89,7 @@ module SocketLabs
               attachments: @attachments,
               customHeaders: @custom_headers,
               metadata: @metadata,
+              tags: @tags,
               to: @to_email_address,
               cc: @cc_email_address,
               bcc: @bcc_email_address

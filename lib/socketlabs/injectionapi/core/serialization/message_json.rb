@@ -45,6 +45,7 @@ module SocketLabs
             @attachments = Array.new
             @custom_headers = Array.new
             @metadata = Array.new
+            @tags = Array.new
             @to_email_address = Array.new
             @cc_email_address = Array.new
             @bcc_email_address = Array.new
@@ -131,6 +132,35 @@ module SocketLabs
             if value.instance_of? MetadataJson
               @metadata.push(value)
             end
+          end
+
+          # Get the list of tags added to the message.
+          def tags
+            @tags
+          end
+
+          # Set the list of tags added to the message.
+          def tags=(value)
+            @tags = Array.new
+            unless value.nil? || value.empty?
+              value.each do |v1|
+                if v1.kind_of? String
+                  @tags.push(v1)
+                else
+                  raise StandardError("Invalid type for tag, type of 'String' was expected")
+                end
+              end
+            end
+          end
+
+          # Add a Tag to the message.
+          # @param [String] value
+          def add_metadata(value = nil)
+
+            if value.kind_of? String
+              @tags.push(value)
+            end
+
           end
 
           # Get the To email address list
@@ -269,6 +299,10 @@ module SocketLabs
                 e.push(value.to_hash)
               end
               json[:metadata] = e
+            end
+
+            unless @tags.nil? || @tags.length == 0
+              json[:tags] = @tags
             end
 
             unless @attachments.nil? || @attachments.length == 0
