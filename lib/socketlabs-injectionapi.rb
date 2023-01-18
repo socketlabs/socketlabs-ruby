@@ -1,3 +1,5 @@
+require 'json'
+
 require_relative 'socketlabs/injectionapi/core/send_validator'
 require_relative 'socketlabs/injectionapi/core/string_extension'
 require_relative 'socketlabs/injectionapi/address_result'

@@ -87,6 +87,7 @@ module SocketLabs
               replyTo: @reply_to_email_address,
               attachments: @attachments,
               customHeaders: @custom_headers,
+              metadata: @metadata,
               to: @to_email_address,
               cc: @cc_email_address,
               bcc: @bcc_email_address

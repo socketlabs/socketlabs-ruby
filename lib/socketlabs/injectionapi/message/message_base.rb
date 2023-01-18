@@ -77,6 +77,7 @@ module SocketLabs
 
           @attachments = Array.new
           @custom_headers = Array.new
+          @metadata = Array.new
 
         end
 
@@ -140,6 +141,7 @@ module SocketLabs
         def custom_headers
           @custom_headers
         end
+
         # Set the list of custom message headers added to the message.
         def custom_headers=(value)
           @custom_headers = Array.new
@@ -153,6 +155,7 @@ module SocketLabs
             end
           end
         end
+
         # Add a CustomHeader to the message.
         # @param [String/CustomHeader] name
         # @param [String] value
@@ -168,7 +171,39 @@ module SocketLabs
 
         end
 
+        # Get the list of metadata added to the message.
+        def metadata
+          @metadata
+        end
 
+        # Set the list of metadata added to the message.
+        def metadata=(value)
+          @metadata = Array.new
+          unless value.nil? || value.empty?
+            value.each do |v1|
+              if v1.instance_of? Metadata
+                @metadata.push(v1)
+              else
+                raise StandardError("Invalid type for metadata, type of 'Metadata' was expected")
+              end
+            end
+          end
+        end
+
+        # Add a Metadata to the message.
+        # @param [String/Metadata] name
+        # @param [String] value
+        def add_metadata(name, value = nil)
+
+          if name.kind_of? Metadata
+            @metadata.push(name)
+
+          elsif name.kind_of? String
+            @metadata.push(Metadata.new(name, value))
+
+          end
+
+        end
 
       end
     end
