@@ -4,10 +4,12 @@ require_relative '../message/email_address.rb'
 require_relative '../message/bulk_message.rb'
 require_relative '../message/bulk_recipient.rb'
 require_relative '../message/custom_header.rb'
+require_relative '../message/metadata.rb'
 
 require_relative 'serialization/address_json.rb'
 require_relative 'serialization/attachment_json.rb'
 require_relative 'serialization/custom_header_json.rb'
+require_relative 'serialization/metadata_json.rb'
 require_relative 'serialization/message_json.rb'
 require_relative 'serialization/merge_data_json.rb'
 
@@ -68,6 +70,7 @@ module SocketLabs
           message_json.charset = message.charset
           message_json.from_email_address = email_address_to_address_json(message.from_email_address)
           message_json.custom_headers = populate_custom_headers(message.custom_headers)
+          message_json.metadata = populate_metadata(message.metadata)
           message_json.attachments = populate_attachments(message.attachments)
 
           unless message.api_template.nil?
@@ -80,7 +83,7 @@ module SocketLabs
 
         end
 
-        # Converts a list of Attachment objects to a List of AttachmentJson objects.
+        # Converts a list of CustomHeader objects to a List of CustomHeaderJson objects.
         # @param [Array] custom_headers: list of CustomHeader to convert
         # @return [Array] the converted list of CustomHeaderJson
         def populate_custom_headers(custom_headers)
@@ -100,6 +103,29 @@ module SocketLabs
           end
 
           headers_json
+
+        end
+
+        # Converts a list of Metadata objects to a List of MetadataJson objects.
+        # @param [Array] metadata: list of Metadata to convert
+        # @return [Array] the converted list of MetadataJson
+        def populate_metadata(metadata)
+
+          if metadata.nil? || metadata.empty?
+            nil
+          end
+
+          metadata_json = Array.new
+
+          metadata.each do |header|
+            if header.instance_of? Metadata
+              metadata_json.push(MetadataJson.new(header.name, header.value))
+            elsif header.instance_of? Hash
+              metadata_json.push(MetadataJson.new(header[:name], header[:value]))
+            end
+          end
+
+          metadata_json
 
         end
 

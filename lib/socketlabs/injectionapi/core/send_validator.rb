@@ -4,6 +4,7 @@ require_relative '../message/email_address.rb'
 require_relative '../message/bulk_message.rb'
 require_relative '../message/bulk_recipient.rb'
 require_relative '../message/custom_header.rb'
+require_relative '../message/metadata.rb'
 
 module SocketLabs
   module InjectionApi
@@ -81,6 +82,9 @@ module SocketLabs
           end
           unless has_valid_custom_headers(message.custom_headers)
             SendResult.enum["MessageValidationInvalidCustomHeaders"]
+          end
+          unless has_valid_metadata(message.metadata)
+            SendResult.enum["MessageValidationInvalidMetadata"]
           end
 
           SendResult.enum["Success"]
@@ -340,6 +344,25 @@ module SocketLabs
           unless custom_headers.nil? || custom_headers.empty?
             custom_headers.each do |item|
               if item.instance_of? CustomHeader
+                unless item.is_valid
+                  false
+                end
+              end
+            end
+          end
+
+          true
+
+        end
+
+        # Check if the list of metadata is valid
+        # @param [Array] metadata
+        # @return [Array]
+        def has_valid_metadata(metadata)
+
+          unless metadata.nil? || metadata.empty?
+            metadata.each do |item|
+              if item.instance_of? Metadata
                 unless item.is_valid
                   false
                 end
