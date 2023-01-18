@@ -45,7 +45,7 @@ module SocketLabs
             SendResponse.new(result=SendResult.enum["AuthenticationValidationFailed"])
           end
 
-          if server_id.nil? || server_id.empty?
+          if server_id.nil? || (!server_id.is_a?(Integer) && server_id.empty?)
             SendResponse.new(result=SendResult.enum["AuthenticationValidationFailed"])
           end
 
