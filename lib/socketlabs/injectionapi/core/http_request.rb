@@ -43,6 +43,12 @@ module SocketLabs
           @endpoint = "https://inject.socketlabs.com/api/v1/email"
           @proxy = Array.new
           @timeout = 120
+          @headers =
+            [
+              { :key => "User-Agent", :value => user_agent},
+              { :key => "Content-Type", :value => "application/json; charset=utf-8" },
+              { :key => "Accept", :value => "application/json"}
+            ]
 
           unless arguments.nil? || arguments.empty?
 
@@ -56,6 +62,10 @@ module SocketLabs
 
             unless arguments[:timeout].nil?
               @timeout = arguments[:timeout]
+            end
+
+            unless arguments[:authorization].nil? || arguments[:authorization].empty?
+              @headers.push({ :key => "Authorization", :value => 'Bearer ' + arguments[:authorization]})
             end
 
           end
@@ -73,6 +83,7 @@ module SocketLabs
 
           # send request
           response = @http.request(@request)
+
           http_response = HttpResponse.new(response)
 
           http_response
@@ -87,25 +98,17 @@ module SocketLabs
           "SocketLabs-ruby/#{VERSION};ruby(#{RUBY_VERSION})"
         end
 
-        # headers to add to the request
-        def headers
-          [
-              { :key => "User-Agent", :value => user_agent},
-              { :key => "Content-Type", :value => "application/json; charset=utf-8" },
-              { :key => "Accept", :value => "application/json"}
-          ]
-        end
-
          # add request headers
         # @param [HTTP::NET] request: the request object
         # @return [HTTP::NET] the resulting request
         def add_request_headers(request)
 
-          request.add_field('Content-Type', 'application/json')
-          headers.each do |item|
+          @headers.each do |item|
             request[item[:key]] = item[:value]
           end
+
           request
+
         end
 
         # Build the API request for HTTP::NET
@@ -130,14 +133,7 @@ module SocketLabs
           @request = add_request_headers(net_http.new(uri.request_uri))
 
         end
-
       end
-
-
-
-
-
-
     end
   end
 end
