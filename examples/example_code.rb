@@ -78,13 +78,16 @@ class ExampleRunner
 
     puts message
 
-    server_id = ENV['SOCKETLABS_SERVER_ID']
-    api_key = ENV['SOCKETLABS_INJECTION_API_KEY']
+    server_id = 16332
+      #ENV['SOCKETLABS_SERVER_ID']
+    api_key = "g_ushjPntipq_X9aWsvJ.zXIarcCaZvdU3YqHLjjjI7tQPvyp4Oi7WmActPPi"
+      #ENV['SOCKETLABS_INJECTION_API_KEY']
 
     # create the proxy hash. accepted values: :host, :port, :user, :pass
     if use_proxy
       proxy = { :host =>"127.0.0.1", :port => 4433 }
     else
+
       proxy = {}
     end
 
