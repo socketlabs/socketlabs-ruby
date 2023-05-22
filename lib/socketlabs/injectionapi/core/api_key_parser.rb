@@ -9,7 +9,7 @@ module SocketLabs
 
         # Parse the API key to determine what kind of key was provided.
         # @param [String] wholeApiKey: A ApiKeyParseResult with the parsing results
-        # @return [ApiKeyParseResult] the SendResponse from the request
+        # @return [ApiKeyParseResult] the ApiKeyParseResult from the request
         def parse(
           wholeApiKey
         )

@@ -137,6 +137,20 @@ module SocketLabs
         debug_json = request_hash.to_json
         @request_json = debug_json
 
+        apiKeyParser = ApiKeyParser.new()
+        parseResult = apiKeyParser.parse(@api_key);
+
+        httpArguments = {
+          :http_endpoint => @endpoint,
+          :proxy => @proxy,
+          :timeout => @request_timeout,
+          :authorization => ''
+        }
+        if parseResult == ApiKeyParseResult.enum["Success"]
+          httpArguments[:authorization] = @api_key
+          request.api_key = ''
+        end
+
         http_request = HttpRequest.new(http_method, { :http_endpoint => @endpoint, :proxy => @proxy, :timeout => @request_timeout })
         retry_handler = RetryHandler.new(http_request, @endpoint, RetrySettings.new(@number_of_retries))
         response = retry_handler.send(request)
