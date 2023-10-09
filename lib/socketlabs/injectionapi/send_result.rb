@@ -316,6 +316,14 @@ module SocketLabs
             :name =>"MessageValidationInvalidMetadata",
             :value =>38,
             :message =>"SDK Validation Error: Message contains invalid metadata"
+          },
+
+          # Metadata and tags exceed 12.5KB
+          "MetadataOrTagsAreTooLarge" =>
+          {
+            :name =>"MetadataOrTagsAreTooLarge",
+            :value =>39,
+            :message =>"Metadata and tags exceed 12.5KB"
           }
 
           }
